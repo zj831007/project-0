@@ -1,0 +1,58 @@
+() : 默认值
+| : 或
+: : 额外信息
+
+SubShader{
+    Tags{
+        "RenderType"{
+            "Transparent" | "Opaque"
+        }
+        "Queue"{
+            "Background":1000 | ("Geometry"):2000 | "AlphaTest":2450 | 
+            "Transparent":3000 | "Overlay":4000
+        }
+        "IgnoreProjector"{
+            "True"
+        }
+        Pass{
+            "LightMode"{
+                "Always" | "ForwardBase" | "ForwardAdd" | "Deferred" | "ShadowCaster" |
+                "MotionVectors" | "PrepassBase" | "PrepassFinal" | "Vertex" | 
+                "VertexLMRGBM" | "VertexLM"
+            }
+        }
+    }
+    Cull{
+        (Back) | Front | Off
+    }
+    ZTest{
+        ZTest Less | Greater | (LEqual) | GEqual | Equal | NotEqual | Always
+    }
+    ZWrite{
+        (On) | Off
+    }
+    Blend{
+        (Off) | SrcFactor DstFactor | SrcFactor DstFactor, SrcFactorA DstFactorA | 
+        Op | OpColor, OpAlpha | N SrcFactor DstFactor | 
+        N SrcFactor DstFactor, SrcFactorA DstFactorA | N Op | N OpColor, OpAlpha
+        where N is the render target index (0..7)
+    }
+    AlphaToMask{
+        On
+    }
+    Offset{
+        Factor, Units
+    }
+    ColorMask{
+        0
+    }
+    Color{
+
+    }
+    Lighting{
+        On
+    }
+    SeparateSpecular{
+        On
+    }
+}
