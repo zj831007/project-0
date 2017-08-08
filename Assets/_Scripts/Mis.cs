@@ -6,7 +6,7 @@
     
     衣服：F4974D
         A57B9C
-    F9E0AF
+    F9DDA9
     皮肤：F9DEAA
         C08683
     */
