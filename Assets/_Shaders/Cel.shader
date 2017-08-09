@@ -1,7 +1,4 @@
-﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-Shader "Custom/Mobile/Cel" {
+﻿Shader "Custom/Mobile/Cel" {
 	Properties {
 		BaseTex ("Base Tex", 2D) = "white" {}
 		SssTex ("SSS Tex", 2D) = "white" {}
@@ -41,14 +38,15 @@ Shader "Custom/Mobile/Cel" {
 
 				float3 pos = UnityObjectToViewPos(In.vertex);
 				float3 norm = UnityObjectToViewPos(In.norm);
-				norm.z = -0.5;
-				pos = pos + normalize(norm) * In.col * 0.007;
+				float3 worldPos = mul(unity_ObjectToWorld, In.vertex);
+				float dist = distance(_WorldSpaceCameraPos, worldPos);
+				pos = pos + normalize(norm) * In.col * 0.02 * dist ;
 				Out.pos = UnityViewToClipPos(pos);
 				return Out;
 			}
 			
 			float4 frag(OutlineV2F In) : SV_Target {
-				return float4(lerp(0, tex2D(BaseTex, In.uv).rgb, 0.35), 1);
+				return float4(0,0,0, 1);
 			}
 			
 			ENDCG
@@ -85,20 +83,19 @@ Shader "Custom/Mobile/Cel" {
 				float2 uv : TEXCOORD0;
 				float3 worldNorm : TEXCOORD1;
 				float2 col : TEXCOORD2;
-				float3 wolrdPos : TEXCOORD3;
-				SHADOW_COORDS(4)
+				float3 worldPos : TEXCOORD3;
+				LIGHTING_COORDS(4, 5)
 			};
-			
 			ModelV2F vert (ModelA2V v) {
 				ModelV2F Out = (ModelV2F)0;
 				
 				Out.pos = UnityObjectToClipPos(v.vertex);
 				Out.uv = v.uv;
 				Out.worldNorm  = UnityObjectToWorldNormal(v.norm);
-				Out.wolrdPos = mul(unity_ObjectToWorld, v.vertex);
+				Out.worldPos = mul(unity_ObjectToWorld, v.vertex);
 				Out.col = v.col.gb;
 				
-				TRANSFER_SHADOW(Out);
+				TRANSFER_VERTEX_TO_FRAGMENT(Out);
 				
 				return Out;
 			}
@@ -109,17 +106,18 @@ Shader "Custom/Mobile/Cel" {
 				float4 ilm = tex2D(IlmTex, In.uv);
 				float3 norm = normalize(In.worldNorm);
 
-				float3 LightDir = normalize(UnityWorldSpaceLightDir(In.wolrdPos));
-				float3 ViewDir = normalize(UnityWorldSpaceViewDir(In.wolrdPos));
+				float3 LightDir = normalize(UnityWorldSpaceLightDir(In.worldPos));
+				float3 ViewDir = normalize(UnityWorldSpaceViewDir(In.worldPos));
 
 				float3 halfDir = normalize(LightDir + ViewDir);
 
-				UNITY_LIGHT_ATTENUATION(atten, In, In.wolrdPos);
-
+				UNITY_LIGHT_ATTENUATION(atten, In, In.worldPos);
+				atten = saturate(atten + 0.1);
 				float3 ambient = UNITY_LIGHTMODEL_AMBIENT.rgb;
 
 				float litThreshold = 1 - ilm.b * In.col.g;
-				float lit = 0.5 + 0.5 * dot(LightDir, norm) * atten;
+				float lit = atten * (0.5 + 0.5 * dot(LightDir, norm));
+
 				float isLit = step(litThreshold, lit);
 				float3 tint = saturate(sss + isLit);
 				
