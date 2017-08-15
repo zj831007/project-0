@@ -29,6 +29,8 @@ namespace Project0
             if (camera != null && camera.hasTransform)
             {
                 camera.AddParent(fighter.transform.value);
+                var rotation = Quaternion.Euler(0f, camera.transform.value.eulerAngles.y, 0f);
+                camera.AddLocalPosition(rotation * new Vector3(0, 0.1f, -0.5f));
             }
         }
 

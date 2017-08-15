@@ -26,10 +26,14 @@ namespace Project0
         {
             var god = _context.game.godEntity;
             var joystick = _context.input.leftJoystickDirectionEntity;
-            if (god != null && god.hasTransform && joystick != null)
+            var camera = _context.game.cameraEntity;
+            if (god != null && god.hasTransform && joystick != null && camera != null && camera.hasTransform)
             {
                 var dir = joystick.leftJoystickDirection.value;
-                god.transform.value.Translate(new Vector3(dir.x, 0, dir.y) * god.god.speed);
+                dir.z = dir.y;
+                dir.y = 0f;
+                var rotation = Quaternion.Euler(0f, camera.transform.value.eulerAngles.y, 0f);
+                god.transform.value.Translate(rotation * dir * god.god.speed);
             }
         }
     }

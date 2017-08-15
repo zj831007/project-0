@@ -20,8 +20,8 @@ namespace Project0
             var contexts = Contexts.sharedInstance;
             return new Feature("Systems")
                 .Add(new GodMovementSystem(contexts))
-                .Add(new ParentSystem(contexts))
                 .Add(new CameraFollowFigherSystem(contexts))
+                .Add(new TransformSystems(contexts))
                 .Add(new CleanupEmptyEntitiesSystem(contexts));
         }
     }
