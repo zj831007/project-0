@@ -17,7 +17,6 @@ namespace Project0.Gui
         {
             _center = hat.transform.position;
         }
-        protected abstract void OnTouchBegin();
         protected abstract void OnTouchEnd();
         protected abstract void OnTouching(Vector3 dir);
         private void Update()
@@ -33,7 +32,6 @@ namespace Project0.Gui
         public void OnPointerDown(PointerEventData eventData)
         {
             _id = eventData.pointerId;
-            OnTouchBegin();
         }
 
         public void OnPointerUp(PointerEventData eventData)

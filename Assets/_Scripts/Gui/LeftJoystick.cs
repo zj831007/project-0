@@ -23,20 +23,15 @@ namespace Project0.Gui
 
             _entity = Contexts.sharedInstance.input.CreateEntity();
             _entity.AddLeftJoystickDirection(Vector3.zero);
-            _entity.AddLeftJoystickTouching(false);
         }
 
         protected override void OnTouching(Vector3 dir)
         {
             _entity.ReplaceLeftJoystickDirection(dir);
         }
-        protected override void OnTouchBegin()
-        {
-            _entity.ReplaceLeftJoystickTouching(true);
-        }
         protected override void OnTouchEnd()
         {
-            _entity.ReplaceLeftJoystickTouching(false);
+            _entity.ReplaceLeftJoystickDirection(Vector3.zero);
         }
     }
 }

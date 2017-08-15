@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>2017.1.0f3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -99,6 +101,46 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameCameraComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameFighterComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameGodComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputLeftJoystickDirectionComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputLeftJoystickTouchingComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputRightJoystickTouchingComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputRightJoystickDirectionComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePlayerComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameParentComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameTransformComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\GameComponentsLookup.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Input\InputComponentsLookup.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\GameAttribute.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Input\InputAttribute.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\GameContext.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Input\InputContext.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\GameMatcher.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Input\InputMatcher.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Contexts.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\GameEntity.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Input\InputEntity.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\_Scripts\Components\ParentComponent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\_Scripts\Components\FighterComponent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\_Scripts\Components\CameraComponent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\_Scripts\Components\legacy\PlayerComponent.cs" />
+    <Compile Include="Assets\_Scripts\EntityCreator\CameraCreator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\_Scripts\Components\GodComponent.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="project-0.Plugins.csproj">
       <Project>{454D2F47-9E39-EBB1-2ED8-62F672DDCDFF}</Project>
       <Name>project-0.Plugins</Name>
@@ -109,37 +151,26 @@
     <Compile Include="Assets\_3rd\FXAA\Scripts\FXAAPostEffectsBase.cs" />
     <Compile Include="Assets\_Scripts\3rd\Entitas\Compile.cs" />
     <Compile Include="Assets\_Scripts\Components\LeftJoystickDirectionComponent.cs" />
-    <Compile Include="Assets\_Scripts\Components\LeftJoystickTouchingComponent.cs" />
+    <Compile Include="Assets\_Scripts\Components\legacy\LeftJoystickTouchingComponent.cs" />
     <Compile Include="Assets\_Scripts\Components\RightJoystickDirectionComponent.cs" />
-    <Compile Include="Assets\_Scripts\Components\RightJoystickTouchingComponent.cs" />
+    <Compile Include="Assets\_Scripts\Components\legacy\RightJoystickTouchingComponent.cs" />
+    <Compile Include="Assets\_Scripts\Components\TransformComponent.cs" />
     <Compile Include="Assets\_Scripts\Controllers\Controller.cs" />
     <Compile Include="Assets\_Scripts\Controllers\TestController.cs" />
     <Compile Include="Assets\_Scripts\Design\SceneSingleton.cs" />
     <Compile Include="Assets\_Scripts\Design\Singleton.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Contexts.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Feature.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\GameAttribute.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\GameComponentsLookup.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\GameContext.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\GameEntity.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\GameMatcher.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputLeftJoystickDirectionComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputLeftJoystickTouchingComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputRightJoystickDirectionComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputRightJoystickTouchingComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\InputAttribute.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\InputComponentsLookup.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\InputContext.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\InputEntity.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\InputMatcher.cs" />
+    <Compile Include="Assets\_Scripts\EntityCreator\GodCreator.cs" />
     <Compile Include="Assets\_Scripts\Gui\Joystick.cs" />
     <Compile Include="Assets\_Scripts\Gui\LeftJoystick.cs" />
     <Compile Include="Assets\_Scripts\Gui\RightJoystick.cs" />
     <Compile Include="Assets\_Scripts\InputUtils.cs" />
-    <Compile Include="Assets\_Scripts\Mis.cs" />
-    <Compile Include="Assets\_Scripts\Operations.cs" />
+    <Compile Include="Assets\_Scripts\Mis\Mis.cs" />
+    <Compile Include="Assets\_Scripts\Mis\Operations.cs" />
+    <Compile Include="Assets\_Scripts\Systems\CameraFollowFigherSystem.cs" />
     <Compile Include="Assets\_Scripts\Systems\CleanupEmptyEntitiesSystem.cs" />
-    <Compile Include="Assets\_Scripts\Todos.cs" />
+    <Compile Include="Assets\_Scripts\Mis\Todos.cs" />
+    <Compile Include="Assets\_Scripts\Systems\GodMovementSystem.cs" />
+    <Compile Include="Assets\_Scripts\Systems\ParentSystem.cs" />
     <Compile Include="Assets\_Scripts\UnityConsole.cs" />
   </ItemGroup>
   <ItemGroup>
