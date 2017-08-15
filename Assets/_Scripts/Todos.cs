@@ -14,7 +14,7 @@
     ilm：
         r: inner_line
         g: SpecularIntensity
-        b: threshold？
+        b: 
         a:
 
     模型，动作
@@ -26,6 +26,7 @@
     抗锯齿(Project settings/quality/Anti aliasing)
     particles
     Dynamic Bone
+    hair physics
     LOD(Levels of Detail)
     UI
     服务器战斗逻辑，登入/聊天/支付
@@ -52,7 +53,10 @@
     晶体管
     二之国·白色圣灰的女王
     火影忍者
-
+    灵魂献祭2
+    讨鬼传
+    海贼无双
+    海贼红
 
     工具
     substance painter

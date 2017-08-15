@@ -38,9 +38,11 @@
 
 				float3 pos = UnityObjectToViewPos(In.vertex);
 				float3 norm = UnityObjectToViewPos(In.norm);
-				float3 worldPos = mul(unity_ObjectToWorld, In.vertex);
-				float dist = distance(_WorldSpaceCameraPos, worldPos);
-				pos = pos + normalize(norm) * In.col * 0.02 * dist ;
+				//float3 worldPos = mul(unity_ObjectToWorld, In.vertex);
+				//float dist = distance(_WorldSpaceCameraPos, worldPos);
+				//pos = pos + normalize(norm) * In.col * 0.02 * dist;
+				
+				pos = pos + normalize(norm) * 0.001;
 				Out.pos = UnityViewToClipPos(pos);
 				return Out;
 			}
@@ -92,10 +94,10 @@
 				Out.pos = UnityObjectToClipPos(v.vertex);
 				Out.uv = v.uv;
 				Out.worldNorm  = UnityObjectToWorldNormal(v.norm);
-				Out.worldPos = mul(unity_ObjectToWorld, v.vertex);
+				Out.worldPos = mul(unity_ObjectToWorld, float4(v.vertex, 1.0));
 				Out.col = v.col.gb;
 				
-				TRANSFER_VERTEX_TO_FRAGMENT(Out);
+				//TRANSFER_VERTEX_TO_FRAGMENT(Out);
 				
 				return Out;
 			}
@@ -111,8 +113,9 @@
 
 				float3 halfDir = normalize(LightDir + ViewDir);
 
-				UNITY_LIGHT_ATTENUATION(atten, In, In.worldPos);
-				atten = saturate(atten + 0.1);
+				//UNITY_LIGHT_ATTENUATION(atten, In, In.worldPos);
+				//atten = saturate(atten + 0.1);
+				float atten = 1;// temp
 				float3 ambient = UNITY_LIGHTMODEL_AMBIENT.rgb;
 
 				float litThreshold = 1 - ilm.b * In.col.g;
