@@ -53,9 +53,9 @@ namespace Project0
         {
             get { return fighterLiftSpeedPercent / 20f; }
         }
-        [Range(0f, 90f)]
+        [Range(0f, 89f)]
         public float mainCameraUpThresold = 75;
-        [Range(0f, -90f)]
+        [Range(0f, -89f)]
         [SerializeField]
         public float mainCameraDownThresold = -75;
     }

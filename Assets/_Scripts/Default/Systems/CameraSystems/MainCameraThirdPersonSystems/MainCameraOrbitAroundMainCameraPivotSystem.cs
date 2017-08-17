@@ -24,27 +24,27 @@ namespace Project0
             _game = context.game;
         }
 
-        Vector3 SmoothDamp(Vector3 current, Vector3 target, ref Vector3 currentVelocity, float smoothTime, float maxSpeed, float deltaTime)
-        {
-            smoothTime = Mathf.Max(0.0001f, smoothTime);
-            float num = 2f / smoothTime;
-            float num2 = num * deltaTime;
-            float d = 1f / (1f + num2 + 0.48f * num2 * num2 + 0.235f * num2 * num2 * num2);
-            Vector3 vector = current - target;
-            Vector3 vector2 = target;
-            float maxLength = maxSpeed * smoothTime;
-            vector = Vector3.ClampMagnitude(vector, maxLength);
-            target = current - vector;
-            Vector3 vector3 = (currentVelocity + num * vector) * deltaTime;
-            currentVelocity = (currentVelocity - num * vector3) * d;
-            Vector3 vector4 = target + (vector + vector3) * d;
-            if (Vector3.Dot(vector2 - current, vector4 - vector2) > 0f)
-            {
-                vector4 = vector2;
-                currentVelocity = (vector4 - vector2) / deltaTime;
-            }
-            return vector4;
-        }
+        //Vector3 SmoothDamp(Vector3 current, Vector3 target, ref Vector3 currentVelocity, float smoothTime, float maxSpeed, float deltaTime)
+        //{
+        //    smoothTime = Mathf.Max(0.0001f, smoothTime);
+        //    float num = 2f / smoothTime;
+        //    float num2 = num * deltaTime;
+        //    float d = 1f / (1f + num2 + 0.48f * num2 * num2 + 0.235f * num2 * num2 * num2);
+        //    Vector3 vector = current - target;
+        //    Vector3 vector2 = target;
+        //    float maxLength = maxSpeed * smoothTime;
+        //    vector = Vector3.ClampMagnitude(vector, maxLength);
+        //    target = current - vector;
+        //    Vector3 vector3 = (currentVelocity + num * vector) * deltaTime;
+        //    currentVelocity = (currentVelocity - num * vector3) * d;
+        //    Vector3 vector4 = target + (vector + vector3) * d;
+        //    if (Vector3.Dot(vector2 - current, vector4 - vector2) > 0f)
+        //    {
+        //        vector4 = vector2;
+        //        currentVelocity = (vector4 - vector2) / deltaTime;
+        //    }
+        //    return vector4;
+        //}
 
         protected override void Execute(List<InputEntity> entities)
         {
