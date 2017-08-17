@@ -5,40 +5,31 @@ using System;
 
 namespace Project0.Gui
 {
-    public abstract class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+    public class Joystick : TouchArea
     {
+        public string EntityName;
         public RectTransform hat;
         public float offset = 25f;
 
+        InputEntity _entity;
         Vector3 _center;
-        int? _id;
 
         protected virtual void Start()
         {
             _center = hat.transform.position;
+            _entity = Contexts.sharedInstance.input.CreateEntity();
+            _entity.AddName(EntityName);
         }
-        protected abstract void OnTouchEnd();
-        protected abstract void OnTouching(Vector3 dir);
-        private void Update()
+        protected override void OnTouchingArea(Vector3 pos)
         {
-            if (_id != null)
-            {
-                Vector3 dir = (InputUtils.GetTouchPosition(_id.Value) - _center).normalized;
-                OnTouching(dir);
-                hat.localPosition = dir * offset;
-            }
+            Vector3 dir = (pos - _center).normalized;
+            hat.localPosition = dir * offset;
+            _entity.ReplaceJoystickDirection(dir);
         }
-
-        public void OnPointerDown(PointerEventData eventData)
+        protected override void OnTouchAreaEnd()
         {
-            _id = eventData.pointerId;
-        }
-
-        public void OnPointerUp(PointerEventData eventData)
-        {
-            _id = null;
             hat.localPosition = Vector3.zero;
-            OnTouchEnd();
+            _entity.RemoveJoystickDirection();
         }
     }
 }
