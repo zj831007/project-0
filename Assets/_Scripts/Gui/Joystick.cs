@@ -29,7 +29,10 @@ namespace Project0.Gui
         protected override void OnTouchAreaEnd()
         {
             hat.localPosition = Vector3.zero;
-            _entity.RemoveJoystickDirection();
+            if (_entity.hasJoystickDirection)
+            {
+                _entity.RemoveJoystickDirection();
+            }
         }
     }
 }

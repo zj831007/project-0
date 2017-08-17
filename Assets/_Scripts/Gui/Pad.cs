@@ -38,7 +38,10 @@ namespace Project0.Gui
         {
             _moved = false;
             step = 0;
-            _entity.RemovePadDirection();
+            if (_entity.hasPadDirection)
+            {
+                _entity.RemovePadDirection();
+            }
         }
     }
 }

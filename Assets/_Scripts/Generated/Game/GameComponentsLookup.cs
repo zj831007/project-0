@@ -18,9 +18,10 @@ public static class GameComponentsLookup {
     public const int MainFighter = 7;
     public const int Name = 8;
     public const int Parent = 9;
-    public const int Transform = 10;
+    public const int Pivot = 10;
+    public const int Transform = 11;
 
-    public const int TotalComponents = 11;
+    public const int TotalComponents = 12;
 
     public static readonly string[] componentNames = {
         "LocalPositionSystem",
@@ -33,6 +34,7 @@ public static class GameComponentsLookup {
         "MainFighter",
         "Name",
         "Parent",
+        "Pivot",
         "Transform"
     };
 
@@ -47,6 +49,7 @@ public static class GameComponentsLookup {
         typeof(Project0.MainFighterComponent),
         typeof(Project0.NameComponent),
         typeof(Project0.ParentComponent),
+        typeof(Project0.PivotComponent),
         typeof(Project0.TransformComponent)
     };
 }

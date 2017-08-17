@@ -32,23 +32,31 @@ namespace Project0
         {
             get { return new Vector3(0f, mainCameraHeight, 0f); }
         }
-        [Range(0, 100)]
-        public float fighterFlySpeedPercent = 50f;
+        [Range(0f, 100f)]
+        [SerializeField]
+        float fighterFlySpeedPercent = 50f;
         public float fighterFlySpeed
         {
             get { return fighterFlySpeedPercent / 20f; }
         }
-        [Range(0, 100)]
-        public float fighterMoveSpeedPercent = 50f;
+        [Range(0f, 100f)]
+        [SerializeField]
+        float fighterMoveSpeedPercent = 50f;
         public float fighterMoveSpeed
         {
             get { return fighterMoveSpeedPercent / 20f; }
         }
-        [Range(0, 100)]
-        public float fighterLiftSpeedPercent = 50f;
+        [Range(0f, 100f)]
+        [SerializeField]
+        float fighterLiftSpeedPercent = 50f;
         public float fighterLiftSpeed
         {
             get { return fighterLiftSpeedPercent / 20f; }
         }
+        [Range(0f, 90f)]
+        public float mainCameraUpThresold = 75;
+        [Range(0f, -90f)]
+        [SerializeField]
+        public float mainCameraDownThresold = -75;
     }
 }

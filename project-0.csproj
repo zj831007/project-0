@@ -76,23 +76,23 @@
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
     </Reference>
-    <Reference Include="Entitas">
-      <HintPath>Assets\_Scripts\3rd\Entitas\Entitas.dll</HintPath>
-    </Reference>
     <Reference Include="Entitas.Blueprints">
       <HintPath>Assets\_Scripts\3rd\Entitas\Entitas.Blueprints.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.VisualDebugging.Unity">
-      <HintPath>Assets\_Scripts\3rd\Entitas\Entitas.VisualDebugging.Unity.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.Unity">
-      <HintPath>Assets\_Scripts\3rd\Entitas\Entitas.Unity.dll</HintPath>
     </Reference>
     <Reference Include="Entitas.CodeGeneration.Attributes">
       <HintPath>Assets\_Scripts\3rd\Entitas\Entitas.CodeGeneration.Attributes.dll</HintPath>
     </Reference>
+    <Reference Include="Entitas">
+      <HintPath>Assets\_Scripts\3rd\Entitas\Entitas.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.Unity">
+      <HintPath>Assets\_Scripts\3rd\Entitas\Entitas.Unity.dll</HintPath>
+    </Reference>
     <Reference Include="Entitas.Utils">
       <HintPath>Assets\_Scripts\3rd\Entitas\Entitas.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.VisualDebugging.Unity">
+      <HintPath>Assets\_Scripts\3rd\Entitas\Entitas.VisualDebugging.Unity.dll</HintPath>
     </Reference>
     <Reference Include="fabl">
       <HintPath>Assets\_Scripts\3rd\Entitas\fabl.dll</HintPath>
@@ -114,6 +114,7 @@
     <Compile Include="Assets\_Scripts\Default\Components\JoystickDirectionComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\legacy\GodComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\legacy\LeftJoystickTouchingComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\legacy\ParentComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\legacy\RightJoystickDirectionComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\legacy\RightJoystickTouchingComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\LocalPositionComponent.cs" />
@@ -121,7 +122,7 @@
     <Compile Include="Assets\_Scripts\Default\Components\MainFighterComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\NameComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\PadDirectionComponent.cs" />
-    <Compile Include="Assets\_Scripts\Default\Components\ParentComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\PivotComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\TransformComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\TupleButtonDirectionComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Controllers\Controller.cs" />
@@ -130,10 +131,13 @@
     <Compile Include="Assets\_Scripts\Default\EntityCreator\FighterCreator.cs" />
     <Compile Include="Assets\_Scripts\Default\GameConfig.cs" />
     <Compile Include="Assets\_Scripts\Default\InputUtils.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\MainCameraCenterOnMainFighterSystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\MainCameraFollowMainFigherSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\MainCameraLookMainFighterSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\MainCameraRotationSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\MainCameraFreeRotationSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\MainCameraThirdPersonSystems\MainCameraLookMainCameraPivotSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\MainCameraThirdPersonSystems\MainCameraOrbitAroundMainCameraPivotSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\MainCameraThirdPersonSystems\MainCameraPivotFollowMainFighterSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\MainCameraThirdPersonSystems\MainCameraThirdPersonSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\MainCameraThirdPersonSystems\MainCameraTrailMainCameraPivotSystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\CleanupEmptyEntitiesSystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\FighterSystems\MainFighterFlySystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\FighterSystems\MainFighterLiftSystem.cs" />
@@ -158,6 +162,7 @@
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameMainFighterComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameNameComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameParentComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePivotComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameTransformComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\GameAttribute.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\GameComponentsLookup.cs" />

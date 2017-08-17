@@ -22,10 +22,9 @@ namespace Project0
                 .Add(new MainFighterFlySystem(contexts))
                 .Add(new MainFighterMoveSystem(contexts))
                 .Add(new MainFighterLiftSystem(contexts))
-                .Add(new MainCameraCenterOnMainFighterSystem(contexts))
-                .Add(new MainCameraFollowMainFigherSystem(contexts))
+                .Add(new MainCameraThirdPersonSystem(contexts))
+                //.Add(new MainCameraFollowMainFigherSystem(contexts))
                 //.Add(new MainCameraRotationSystem(contexts))
-                .Add(new MainCameraLookMainFighterSystem(contexts))
                 .Add(new TransformSystems(contexts));
         }
     }

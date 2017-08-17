@@ -15,18 +15,28 @@ namespace Project0.EntityCreators
 {
     public class CameraCreator : MonoBehaviour
     {
+        //public Transform fighterCreator;
         public bool isMain;
+        public bool hasPivot;
 
         private void Start()
         {
-            var entity = Contexts.sharedInstance.game.CreateEntity();
-            entity.isCamera = true;
-            entity.isMainCamera = isMain;
-            if (transform.parent != null)
+            var cam = Contexts.sharedInstance.game.CreateEntity();
+            cam.isCamera = true;
+            cam.isMainCamera = isMain;
+            //var dir = transform.position - Vector3.zero;
+            //if (fighterCreator)
             {
-                entity.AddParent(transform.parent);
+                //dir = transform.position - fighterCreator.position;
             }
-            entity.AddTransform(transform);
+            //cam.AddFighterToCamera(dir);
+            cam.AddTransform(transform);
+            if (hasPivot)
+            {
+                var pivot = Contexts.sharedInstance.game.CreateEntity();
+                pivot.AddTransform(new GameObject("CameraPivot").transform);
+                cam.AddPivot(pivot);
+            }
         }
     }
 }

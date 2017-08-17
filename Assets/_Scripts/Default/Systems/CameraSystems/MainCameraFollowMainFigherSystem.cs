@@ -15,29 +15,22 @@ namespace Project0
 {
     public class MainCameraFollowMainFigherSystem : IExecuteSystem
     {
-        Contexts _context;
+        GameContext _game;
         Vector3 _vel;
 
         public MainCameraFollowMainFigherSystem(Contexts context)
         {
-            _context = context;
+            _game = context.game;
         }
 
         public void Execute()
         {
-            var camera = _context.game.mainCameraEntity;
-            var fighter = _context.game.mainFighterEntity;
+            var camera = _game.mainCameraEntity;
+            var fighter = _game.mainFighterEntity;
             if (camera != null && camera.hasTransform && fighter != null && fighter.hasTransform)
             {
                 var camTransform = camera.transform.value;
-                var fighterTransform = fighter.transform.value;
-                var focus = fighterTransform.position + GameConfig.instance.mainCameraHeightVector;
-                var toCamera = camTransform.position - focus;
-                var dest = fighterTransform.position + toCamera.normalized * GameConfig.instance.mainCameraDistance;
-                //camTransform.position = Vector3.SmoothDamp(camTransform.position, dest, ref _vel, 0.2f);
-
-                //camTransform.RotateAround(fighterTransform.position, Vector3.up, 5 * Time.deltaTime);
-                //camTransform.position = Vector3.Slerp(camTransform.position, dest, 5 * Time.deltaTime);
+                camTransform.position = Vector3.SmoothDamp(camTransform.position, fighter.transform.value.position, ref _vel, 0.2f);
             }
         }
     }
