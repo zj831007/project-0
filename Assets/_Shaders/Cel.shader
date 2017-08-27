@@ -1,5 +1,6 @@
 ﻿Shader "Custom/Mobile/Cel" {
 	Properties {
+		Outline ("Outline", Range(0,0.01)) = 0.001
 		BaseTex ("Base Tex", 2D) = "white" {}
 		SssTex ("SSS Tex", 2D) = "white" {}
 		IlmTex ("ILM Tex", 2D) = "white" {}
@@ -18,6 +19,7 @@
 			#include "UnityCG.cginc"
 			
 			sampler2D BaseTex;
+			float Outline;
 			
 			struct OutlineA2V
 			{
@@ -38,11 +40,10 @@
 
 				float3 pos = UnityObjectToViewPos(In.vertex);
 				float3 norm = UnityObjectToViewPos(In.norm);
-				//float3 worldPos = mul(unity_ObjectToWorld, In.vertex);
-				//float dist = distance(_WorldSpaceCameraPos, worldPos);
-				//pos = pos + normalize(norm) * In.col * 0.02 * dist;
-				
-				pos = pos + normalize(norm) * 0.001;
+				norm.z = -0.4;
+				float3 worldPos = mul(unity_ObjectToWorld, float4(In.vertex, 1.0));
+				float ratio = distance(_WorldSpaceCameraPos, worldPos)/0.9514744;
+				pos = pos + normalize(norm) * Outline * ratio;
 				Out.pos = UnityViewToClipPos(pos);
 				return Out;
 			}
@@ -70,6 +71,7 @@
 			sampler2D BaseTex;
 			sampler2D SssTex;
 			sampler2D IlmTex;
+			sampler a;
 		
 			struct ModelA2V
 			{
@@ -130,7 +132,7 @@
 				
 				float3 col = base * tint * ilm.r + specular;
 
-				return float4(col * (_LightColor0.rgb + ambient), 1);
+				return float4(col * (_LightColor0.rgb + ambient), 1.0);
 			}
 		
 			ENDCG

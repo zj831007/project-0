@@ -37,7 +37,15 @@ namespace Project0
                     dir.y = 0f;
                 }
                 var rotation = previous + new Vector3(-dir.y * GameConfig.instance.rightPadSensitivityX, dir.x * GameConfig.instance.rightPadSensitivityY, 0f);
-                camera.transform.value.eulerAngles = Vector3.SmoothDamp(previous, rotation, ref _vel, 0.2f);
+                var camTransform = camera.transform.value;
+                camTransform.eulerAngles = Vector3.SmoothDamp(previous, rotation, ref _vel, 0.2f);
+                var angles = camTransform.eulerAngles;
+                var angleX = angles.x > 90 ? angles.x - 360 : angles.x;
+                var min = -GameConfig.instance.mainCameraUpThresold;
+                var max = -GameConfig.instance.mainCameraDownThresold ;
+                angleX = Mathf.Clamp(angleX, min, max);
+                angles.x = angleX;
+                camTransform.eulerAngles = angles;
             }
         }
 

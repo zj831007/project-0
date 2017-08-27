@@ -12,7 +12,7 @@ namespace Project0.Gui
 
         protected abstract void OnTouchAreaEnd();
         protected abstract void OnTouchingArea(Vector3 pos);
-        private void Update()
+        protected virtual void Update()
         {
             if (_id != null)
             {

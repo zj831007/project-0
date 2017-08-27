@@ -1,15 +1,35 @@
 fileFormatVersion: 2
-guid: 6be703b573302b543b5873cd01eb37fc
-timeCreated: 1502777619
+guid: 181f3f0c76bc940448e82481fbb5fbf1
+timeCreated: 1503735851
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Camera
+    100004: Cube
+    100006: high-polyMesh
+    100008: Lamp
+    100010: testMesh
     400000: //RootNode
+    400002: Camera
+    400004: Cube
+    400006: high-polyMesh
+    400008: Lamp
+    400010: testMesh
+    2000000: Camera
     2300000: //RootNode
+    2300002: Cube
+    2300004: high-polyMesh
+    2300006: testMesh
     3300000: //RootNode
+    3300002: Cube
+    3300004: high-polyMesh
+    3300006: testMesh
     4300000: Cube
+    4300002: high-polyMesh
+    4300004: testMesh
+    10800000: Lamp
   materials:
     importMaterials: 1
     materialName: 0

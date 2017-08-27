@@ -34,5 +34,45 @@ namespace Project0.Gui
                 _entity.RemoveJoystickDirection();
             }
         }
+        protected override void Update()
+        {
+            base.Update();
+
+#if UNITY_EDITOR
+
+            if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W))
+            {
+                _entity.ReplaceJoystickDirection((Vector3.left + Vector3.up).normalized);
+            }
+            else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S))
+            {
+                _entity.ReplaceJoystickDirection((Vector3.left + Vector3.down).normalized);
+            }
+            else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S))
+            {
+                _entity.ReplaceJoystickDirection((Vector3.right + Vector3.down).normalized);
+            }
+            else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W))
+            {
+                _entity.ReplaceJoystickDirection((Vector3.right + Vector3.up).normalized);
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                _entity.ReplaceJoystickDirection(Vector3.right);
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                _entity.ReplaceJoystickDirection(Vector3.down);
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                _entity.ReplaceJoystickDirection(Vector3.left);
+            }
+            else if (Input.GetKey(KeyCode.W))
+            {
+                _entity.ReplaceJoystickDirection(Vector3.up);
+            }
+#endif
+        }
     }
 }

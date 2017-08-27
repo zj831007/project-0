@@ -181,7 +181,6 @@
     <Compile Include="Assets\Standard Assets\Editor\ImageEffects\AntialiasingEditor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Models\GearXStage.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
@@ -193,6 +192,7 @@
     <None Include="Assets\_3rd\FXAA\Shaders\Fxaa3.shader" />
     <None Include="Assets\_3rd\FXAA\Shaders\Fxaa3_9.cginc" />
     <None Include="Assets\_Shaders\Cel.shader" />
+    <None Include="Assets\_Shaders\Models\GearXStage.shader" />
     <None Include="Assets\_Shaders\NewUnlitShader.shader" />
     <None Include="Assets\_Shaders\configs.txt" />
   </ItemGroup>
