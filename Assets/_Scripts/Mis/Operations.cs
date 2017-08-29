@@ -25,6 +25,7 @@
     骨头父亲：ctrl p
     曲线类型：v
     转换成曲线/模型：alt c
+    应用设置：ctrl a
 
     pose mode{
         重置方向：alt r
