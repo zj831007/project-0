@@ -15,34 +15,26 @@ namespace Project0
 {
     public class TestController : Controller
     {
-        public bool isGod;
-
         protected override Systems GetSystems()
         {
             var contexts = Contexts.sharedInstance;
-            if (isGod)
+            switch (GameConfig.instance.inputMode)
             {
-                return new Feature("Systems")
-                    .Add(new MainFighterFlySystem(contexts))
-                    .Add(new MainFighterMoveSystem(contexts))
-                    .Add(new MainFighterLiftSystem(contexts))
-                    //.Add(new MainCameraThirdPersonSystem(contexts))
-                    .Add(new MainCameraFollowMainFigherSystem(contexts))
-                    .Add(new MainCameraFreeRotationSystem(contexts))
-                    .Add(new TransformSystems(contexts));
+                case InputMode.God:
+                    return new Feature("Systems")
+                        //.Add(new TransformSystems(contexts))
+                        .Add(new InitInputActivitySystem())
+                        .Add(new MainCameraFlySystem(contexts))
+                        .Add(new MainCameraWalkSystem(contexts))
+                        .Add(new MainCameraLiftSystem(contexts))
+                        .Add(new MainCameraFreeRotationSystem(contexts));
+                default:
+                    return new Feature("Systems")
+                        .Add(new InitInputActivitySystem())
+                        //.Add(new TransformSystems(contexts))
+                        .Add(new MainFighterWalkSystem(contexts))
+                        .Add(new MainCameraThirdPersonSystem(contexts));
             }
-            else
-            {
-                return new Feature("Systems")
-                    .Add(new MainFighterFlySystem(contexts))
-                    .Add(new MainFighterMoveSystem(contexts))
-                    .Add(new MainFighterLiftSystem(contexts))
-                    .Add(new MainCameraThirdPersonSystem(contexts))
-                    //.Add(new MainCameraFollowMainFigherSystem(contexts))
-                    //.Add(new MainCameraFreeRotationSystem(contexts))
-                    .Add(new TransformSystems(contexts));
-            }
-
         }
     }
 }

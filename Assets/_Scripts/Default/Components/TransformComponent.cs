@@ -13,7 +13,7 @@ using Object = UnityEngine.Object;
 
 namespace Project0
 {
-    [Game]
+    [Game, Input]
     public class TransformComponent : IComponent
     {
         public Transform value;

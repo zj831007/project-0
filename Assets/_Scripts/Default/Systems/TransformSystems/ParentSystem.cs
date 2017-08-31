@@ -26,17 +26,17 @@ namespace Project0
         {
             foreach (var e in entities)
             {
-                if (e.hasParent)
-                {
-                    if (e.transform.value.parent != e.parent.value)
-                    {
-                        e.transform.value.SetParent(e.parent.value);
-                    }
-                }
-                else
-                {
-                    e.transform.value.SetParent(null);
-                }
+                //if (e.hasParent)
+                //{
+                //    if (e.transform.value.parent != e.parent.value)
+                //    {
+                //        e.transform.value.SetParent(e.parent.value);
+                //    }
+                //}
+                //else
+                //{
+                //    e.transform.value.SetParent(null);
+                //}
             }
         }
 
@@ -47,7 +47,8 @@ namespace Project0
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
         {
-            return context.CreateCollector(GameMatcher.Parent);
+            //return context.CreateCollector(GameMatcher.Parent);
+            return null;
         }
     }
 }

@@ -18,7 +18,6 @@ namespace Project0
         public TransformSystems(Contexts contexts) : base("Transform Systems")
         {
             Add(new ParentSystem(contexts));
-            Add(new LocalPositionSystem(contexts));
         }
     }
 }

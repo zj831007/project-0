@@ -8,47 +8,32 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int LocalPositionSystem = 0;
-    public const int Camera = 1;
-    public const int Fighter = 2;
-    public const int FighterToCamera = 3;
-    public const int God = 4;
-    public const int LocalPosition = 5;
-    public const int MainCamera = 6;
-    public const int MainFighter = 7;
-    public const int Name = 8;
-    public const int Parent = 9;
-    public const int Pivot = 10;
-    public const int Transform = 11;
+    public const int Camera = 0;
+    public const int Fighter = 1;
+    public const int MainCamera = 2;
+    public const int MainFighter = 3;
+    public const int Name = 4;
+    public const int Pivot = 5;
+    public const int Transform = 6;
 
-    public const int TotalComponents = 12;
+    public const int TotalComponents = 7;
 
     public static readonly string[] componentNames = {
-        "LocalPositionSystem",
         "Camera",
         "Fighter",
-        "FighterToCamera",
-        "God",
-        "LocalPosition",
         "MainCamera",
         "MainFighter",
         "Name",
-        "Parent",
         "Pivot",
         "Transform"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(LocalPositionSystemComponent),
         typeof(Project0.CameraComponent),
         typeof(Project0.FighterComponent),
-        typeof(Project0.FighterToCamera),
-        typeof(Project0.GodComponent),
-        typeof(Project0.LocalPositionComponent),
         typeof(Project0.MainCameraComponent),
         typeof(Project0.MainFighterComponent),
         typeof(Project0.NameComponent),
-        typeof(Project0.ParentComponent),
         typeof(Project0.PivotComponent),
         typeof(Project0.TransformComponent)
     };

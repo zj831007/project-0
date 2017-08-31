@@ -54,22 +54,22 @@ namespace Project0
             if (camera != null && camera.hasTransform && fighter != null && fighter.hasTransform)
             {
                 var previous = camera.transform.value.eulerAngles;
-                var dir = pad.padDirection.value;
+                var dir = pad.direction.value;
                 if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
                 {
                     dir.y = 0f;
                 }
                 var camTransform = camera.transform.value;
                 var fighterTransform = fighter.transform.value;
-                var x = Mathf.SmoothDamp(0f, dir.x, ref _xVel, 0.2f) * GameConfig.instance.rightPadSensitivityX;
-                var y = Mathf.SmoothDamp(0f, dir.y, ref _yVel, 0.2f) * GameConfig.instance.rightPadSensitivityY;
+                var x = Mathf.SmoothDamp(0f, dir.x, ref _xVel, 0.2f) * GameConfig.instance.rightPadX;
+                var y = Mathf.SmoothDamp(0f, dir.y, ref _yVel, 0.2f) * GameConfig.instance.rightPadY;
                 var toCamera = camTransform.position - fighterTransform.position;
                 var floor = new Vector3(toCamera.x, 0f, toCamera.z);
                 var angleFromFloor = Vector3.Angle(toCamera, floor);
                 angleFromFloor *= Mathf.Sign(toCamera.y);
-                var min = GameConfig.instance.mainCameraDownThresold;
-                var max = GameConfig.instance.mainCameraUpThresold;
-                y = Math.Min(angleFromFloor-min, Mathf.Max(angleFromFloor - max, y));
+                var min = GameConfig.instance.cameraDown;
+                var max = GameConfig.instance.cameraUp;
+                y = Math.Min(angleFromFloor - min, Mathf.Max(angleFromFloor - max, y));
                 camTransform.RotateAround(fighterTransform.position, Vector3.up, x);
                 camTransform.RotateAround(fighterTransform.position, Vector3.Cross(Vector3.up, toCamera), y);
             }
@@ -77,12 +77,12 @@ namespace Project0
 
         protected override bool Filter(InputEntity entity)
         {
-            return entity.hasPadDirection && entity.hasName && entity.name.value == "Right";
+            return entity.hasDirection && entity.hasName && entity.name.value == "RightPad";
         }
 
         protected override ICollector<InputEntity> GetTrigger(IContext<InputEntity> context)
         {
-            return context.CreateCollector(InputMatcher.PadDirection);
+            return context.CreateCollector(InputMatcher.Direction);
         }
     }
 }

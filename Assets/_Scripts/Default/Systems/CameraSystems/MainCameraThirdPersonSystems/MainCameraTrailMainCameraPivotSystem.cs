@@ -34,7 +34,7 @@ namespace Project0
                     var camTransform = camera.transform.value;
                     var pivotTransform = pivot.transform.value;
                     var toCamera = camTransform.position - pivotTransform.position;
-                    camTransform.position = pivotTransform.position + toCamera.normalized * GameConfig.instance.mainCameraDistance;
+                    camTransform.position = pivotTransform.position + toCamera.normalized * GameConfig.instance.cameraDistance;
                 }
             }
         }

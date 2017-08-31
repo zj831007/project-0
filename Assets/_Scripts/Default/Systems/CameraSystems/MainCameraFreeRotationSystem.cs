@@ -13,7 +13,6 @@ using Object = UnityEngine.Object;
 
 namespace Project0
 {
-    //after MainCameraFollowMainFigherSystem
     public class MainCameraFreeRotationSystem : ReactiveSystem<InputEntity>
     {
         GameContext _game;
@@ -31,18 +30,18 @@ namespace Project0
             if (camera != null && camera.hasTransform)
             {
                 var previous = camera.transform.value.eulerAngles;
-                var dir = pad.padDirection.value;
+                var dir = pad.direction.value;
                 if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
                 {
                     dir.y = 0f;
                 }
-                var rotation = previous + new Vector3(-dir.y * GameConfig.instance.rightPadSensitivityX, dir.x * GameConfig.instance.rightPadSensitivityY, 0f);
+                var rotation = previous + new Vector3(-dir.y * GameConfig.instance.rightPadX, dir.x * GameConfig.instance.rightPadY, 0f);
                 var camTransform = camera.transform.value;
                 camTransform.eulerAngles = Vector3.SmoothDamp(previous, rotation, ref _vel, 0.2f);
                 var angles = camTransform.eulerAngles;
                 var angleX = angles.x > 90 ? angles.x - 360 : angles.x;
-                var min = -GameConfig.instance.mainCameraUpThresold;
-                var max = -GameConfig.instance.mainCameraDownThresold ;
+                var min = -GameConfig.instance.cameraUp;
+                var max = -GameConfig.instance.cameraDown;
                 angleX = Mathf.Clamp(angleX, min, max);
                 angles.x = angleX;
                 camTransform.eulerAngles = angles;
@@ -51,12 +50,12 @@ namespace Project0
 
         protected override bool Filter(InputEntity entity)
         {
-            return entity.hasPadDirection && entity.hasName && entity.name.value == "Right";
+            return entity.hasDirection && entity.hasName && entity.name.value == "RightPad";
         }
 
         protected override ICollector<InputEntity> GetTrigger(IContext<InputEntity> context)
         {
-            return context.CreateCollector(InputMatcher.PadDirection);
+            return context.CreateCollector(InputMatcher.Direction);
         }
     }
 }

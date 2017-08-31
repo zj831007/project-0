@@ -29,6 +29,7 @@ ModelImporter:
     4300000: Cube
     4300002: high-polyMesh
     4300004: testMesh
+    4300006: base_human_male_default
     10800000: Lamp
   materials:
     importMaterials: 1

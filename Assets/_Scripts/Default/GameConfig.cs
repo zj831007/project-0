@@ -16,47 +16,105 @@ namespace Project0
 {
     public class GameConfig : SceneSingleton<GameConfig>
     {
-        public float rightPadSensitivityX = 50f;
-        public float rightPadSensitivityY = 50f;
-        public float mainCameraDistance = 1f;
-        public float mainCameraDistanceSquare
+        static GameConfig()
         {
-            get { return mainCameraDistance * mainCameraDistance; }
         }
-        public Vector3 mainCameraDistanceVector
+
+        #region inputActivities
+        [SerializeField]
+        public InputActivity[] _inputActivities;
+        public InputActivity[] inputActivities
         {
-            get { return new Vector3(0f, 0f, mainCameraDistance); }
+            get { return _inputActivities; }
         }
-        public float mainCameraHeight = 1f;
-        public Vector3 mainCameraHeightVector
-        {
-            get { return new Vector3(0f, mainCameraHeight, 0f); }
-        }
+        #endregion
+
+        public InputMode inputMode;
+
+        #region rightPadX
         [Range(0f, 100f)]
         [SerializeField]
-        float fighterFlySpeedPercent = 50f;
-        public float fighterFlySpeed
+        float _rightPadX = 50f;
+        public float rightPadX
         {
-            get { return fighterFlySpeedPercent / 20f; }
+            get { return _rightPadX / 10f; }
         }
+        #endregion
+
+        #region rightPadY
         [Range(0f, 100f)]
         [SerializeField]
-        float fighterMoveSpeedPercent = 50f;
-        public float fighterMoveSpeed
+        float _rightPadY = 50f;
+        public float rightPadY
         {
-            get { return fighterMoveSpeedPercent / 20f; }
+            get { return _rightPadY / 10f; }
         }
+        #endregion
+
+        #region cameraDistance
+        [Range(0f, 5f)]
+        public float cameraDistance = 1f;
+        #endregion
+
+        #region cameraHeight
+        [Range(0f, 5f)]
+        [SerializeField]
+        float _cameraHeight = 1f;
+        public Vector3 cameraHeight
+        {
+            get { return new Vector3(0f, _cameraHeight, 0f); }
+        }
+        #endregion
+
+        #region cameraFly
         [Range(0f, 100f)]
         [SerializeField]
-        float fighterLiftSpeedPercent = 50f;
-        public float fighterLiftSpeed
+        float _cameraFly = 50f;
+        public float cameraFly
         {
-            get { return fighterLiftSpeedPercent / 20f; }
+            get { return _cameraFly / 20f; }
         }
+        #endregion
+
+        #region cameraWalk
+        [Range(0f, 100f)]
+        [SerializeField]
+        float _cameraWalk = 50f;
+        public float cameraWalk
+        {
+            get { return _cameraWalk / 20f; }
+        }
+        #endregion
+
+        #region cameraLift
+        [Range(0f, 100f)]
+        [SerializeField]
+        float _cameraLift = 50f;
+        public float cameraLift
+        {
+            get { return _cameraLift / 20f; }
+        }
+        #endregion
+
+        #region cameraUp
         [Range(0f, 89f)]
-        public float mainCameraUpThresold = 75;
+        public float cameraUp = 75;
+        #endregion
+
+        #region cameraDown
         [Range(0f, -89f)]
+        public float cameraDown = -75;
+        #endregion
+
+        #region fighterWalk
+        [Range(0f, 100f)]
         [SerializeField]
-        public float mainCameraDownThresold = -75;
+        float _fighterWalk = 50f;
+        public float fighterWalk
+        {
+            get { return _fighterWalk / 20f; }
+        }
+        #endregion
+
     }
 }

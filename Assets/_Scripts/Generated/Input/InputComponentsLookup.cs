@@ -8,33 +8,21 @@
 //------------------------------------------------------------------------------
 public static class InputComponentsLookup {
 
-    public const int JoystickDirection = 0;
-    public const int LeftJoystickTouching = 1;
-    public const int Name = 2;
-    public const int RightJoystickDirection = 3;
-    public const int RightJoystickTouching = 4;
-    public const int PadDirection = 5;
-    public const int TupleButtonDirection = 6;
+    public const int Direction = 0;
+    public const int Name = 1;
+    public const int Transform = 2;
 
-    public const int TotalComponents = 7;
+    public const int TotalComponents = 3;
 
     public static readonly string[] componentNames = {
-        "JoystickDirection",
-        "LeftJoystickTouching",
+        "Direction",
         "Name",
-        "RightJoystickDirection",
-        "RightJoystickTouching",
-        "PadDirection",
-        "TupleButtonDirection"
+        "Transform"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Project0.JoystickDirectionComponent),
-        typeof(Project0.LeftJoystickTouchingComponent),
+        typeof(Project0.DirectionComponent),
         typeof(Project0.NameComponent),
-        typeof(Project0.RightJoystickDirectionComponent),
-        typeof(Project0.RightJoystickTouchingComponent),
-        typeof(Prroject0.PadDirectionComponent),
-        typeof(Prroject0.TupleButtonDirectionComponent)
+        typeof(Project0.TransformComponent)
     };
 }
