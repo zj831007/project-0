@@ -8,21 +8,27 @@
 //------------------------------------------------------------------------------
 public static class InputComponentsLookup {
 
-    public const int Direction = 0;
-    public const int Name = 1;
-    public const int Transform = 2;
+    public const int Coroutine = 0;
+    public const int Direction = 1;
+    public const int Name = 2;
+    public const int Transform = 3;
+    public const int Touching = 4;
 
-    public const int TotalComponents = 3;
+    public const int TotalComponents = 5;
 
     public static readonly string[] componentNames = {
+        "Coroutine",
         "Direction",
         "Name",
-        "Transform"
+        "Transform",
+        "Touching"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Project0.CoroutineComponent),
         typeof(Project0.DirectionComponent),
         typeof(Project0.NameComponent),
-        typeof(Project0.TransformComponent)
+        typeof(Project0.TransformComponent),
+        typeof(Prroject0.TouchingComponent)
     };
 }

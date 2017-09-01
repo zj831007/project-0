@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Project0
 {
-    [Input]
+    [Game, Input]
     public class DirectionComponent : IComponent
     {
         public Vector3 value;

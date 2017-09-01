@@ -470,7 +470,7 @@ Transform:
   m_GameObject: {fileID: 120121695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -1636,7 +1636,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1484140858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.642055, y: -11.965237, z: 0.7411599}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1656,16 +1656,21 @@ MonoBehaviour:
   _inputActivities:
   - {fileID: 11400000, guid: 36b39731bd5fa6c48a18594436a47bef, type: 2}
   - {fileID: 11400000, guid: ed9cb0ecf2ab4da4aaef7087f25d8c01, type: 2}
-  inputMode: 1
+  inputMode: 0
   _rightPadX: 50
   _rightPadY: 50
   cameraDistance: 3.5
   _cameraHeight: 1.5
   _cameraFlySpeed: 50
-  _cameraWalk: 50
+  _cameraWalkSpeed: 50
   _cameraLiftSpeed: 50
-  cameraUp: 75
-  cameraDown: -75
+  cameraUpDegree: 75
+  cameraDownDegree: -75
+  cameraAutoLock: 1
+  cameraFastLock: 1
+  cameraAutoTime: 0.5
+  cameraAutoDegree: 15
+  _cameraAutoSpeed: 50
   _fighterWalkSpeed: 50
 --- !u!1 &1541342502
 GameObject:

@@ -25,16 +25,19 @@ namespace Project0
         protected override void Execute(List<InputEntity> entities)
         {
             var joystick = entities[0];
+            var camera = _context.game.cameraEntity;
             var fighter = _context.game.mainFighterEntity;
-            var camera = _context.game.mainCameraEntity;
             if (fighter != null && fighter.hasTransform && camera != null && camera.hasTransform)
             {
+                var fighterTransform = fighter.transform.value;
                 var dir = joystick.direction.value;
                 dir.z = dir.y;
                 dir.y = 0f;
                 var angles = camera.transform.value.eulerAngles;
                 var rotation = Quaternion.Euler(0f, angles.y, 0f);
-                fighter.transform.value.Translate(rotation * dir * GameConfig.instance.fighterWalk * Time.deltaTime);
+                var dest = fighterTransform.position + rotation * dir * GameConfig.instance.fighterWalkSpeed * Time.deltaTime;
+                fighterTransform.LookAt(dest);
+                fighterTransform.position = dest;
             }
         }
 

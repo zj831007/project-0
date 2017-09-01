@@ -68,6 +68,13 @@ namespace Project0.EntityCreators
             {
                 entity.ReplaceDirection(Vector3.up);
             }
+            else if (Input.GetKeyUp(KeyCode.A)|| Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
+            {
+                if (entity.hasDirection)
+                {
+                    entity.RemoveDirection();
+                }
+            }
 #endif
         }
     }

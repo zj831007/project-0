@@ -16,10 +16,6 @@ namespace Project0
 {
     public class GameConfig : SceneSingleton<GameConfig>
     {
-        static GameConfig()
-        {
-        }
-
         #region inputActivities
         [SerializeField]
         public InputActivity[] _inputActivities;
@@ -66,53 +62,72 @@ namespace Project0
         }
         #endregion
 
-        #region cameraFly
+        #region cameraFlySpeed
         [Range(0f, 100f)]
         [SerializeField]
-        float _cameraFly = 50f;
-        public float cameraFly
+        float _cameraFlySpeed = 50f;
+        public float cameraFlySpeed
         {
-            get { return _cameraFly / 20f; }
+            get { return _cameraFlySpeed / 20f; }
         }
         #endregion
 
-        #region cameraWalk
+        #region cameraWalkSpeed
         [Range(0f, 100f)]
         [SerializeField]
-        float _cameraWalk = 50f;
-        public float cameraWalk
+        float _cameraWalkSpeed = 50f;
+        public float cameraWalkSpeed
         {
-            get { return _cameraWalk / 20f; }
+            get { return _cameraWalkSpeed / 20f; }
         }
         #endregion
 
-        #region cameraLift
+        #region cameraLiftSpeed
         [Range(0f, 100f)]
         [SerializeField]
-        float _cameraLift = 50f;
-        public float cameraLift
+        float _cameraLiftSpeed = 50f;
+        public float cameraLiftSpeed
         {
-            get { return _cameraLift / 20f; }
+            get { return _cameraLiftSpeed / 20f; }
         }
         #endregion
 
-        #region cameraUp
+        #region cameraUpDegree
         [Range(0f, 89f)]
-        public float cameraUp = 75;
+        public float cameraUpDegree = 75;
         #endregion
 
-        #region cameraDown
+        #region cameraDownDegree
         [Range(0f, -89f)]
-        public float cameraDown = -75;
+        public float cameraDownDegree = -75;
         #endregion
 
-        #region fighterWalk
+        public bool cameraAutoLock = true;
+        public bool cameraFastLock = false;
+        public float cameraAutoTime = 0.5f;
+
+        #region cameraAutoDegree
+        [Range(-89f, 89f)]
+        public float cameraAutoDegree = 15f;
+        #endregion
+
+        #region cameraAutoSpeed
         [Range(0f, 100f)]
         [SerializeField]
-        float _fighterWalk = 50f;
-        public float fighterWalk
+        public float _cameraAutoSpeed = 50f;
+        public float cameraAutoSpeed
         {
-            get { return _fighterWalk / 20f; }
+            get { return _cameraAutoSpeed / 50f; }
+        }
+        #endregion
+
+        #region fighterWalkSpeed
+        [Range(0f, 100f)]
+        [SerializeField]
+        float _fighterWalkSpeed = 50f;
+        public float fighterWalkSpeed
+        {
+            get { return _fighterWalkSpeed / 20f; }
         }
         #endregion
 

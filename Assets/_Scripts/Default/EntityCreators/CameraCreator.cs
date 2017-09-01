@@ -19,7 +19,6 @@ namespace Project0.EntityCreators
         {
             var cam = Contexts.sharedInstance.game.CreateEntity();
             cam.isCamera = true;
-            cam.isMainCamera = true;
             cam.AddTransform(transform);
         }
     }

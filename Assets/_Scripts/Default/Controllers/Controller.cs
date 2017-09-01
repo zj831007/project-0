@@ -17,7 +17,6 @@ namespace Project0
     {
         protected abstract Systems GetSystems();
         Systems systems;
-
         protected virtual void Start()
         {
             systems = GetSystems();

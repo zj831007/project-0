@@ -24,16 +24,16 @@ namespace Project0
                     return new Feature("Systems")
                         //.Add(new TransformSystems(contexts))
                         .Add(new InitInputActivitySystem())
-                        .Add(new MainCameraFlySystem(contexts))
-                        .Add(new MainCameraWalkSystem(contexts))
-                        .Add(new MainCameraLiftSystem(contexts))
-                        .Add(new MainCameraFreeRotationSystem(contexts));
+                        .Add(new CameraFlySystem(contexts))
+                        .Add(new CameraWalkSystem(contexts))
+                        .Add(new CameraLiftSystem(contexts))
+                        .Add(new CameraFreeRotationSystem(contexts));
                 default:
                     return new Feature("Systems")
                         .Add(new InitInputActivitySystem())
                         //.Add(new TransformSystems(contexts))
                         .Add(new MainFighterWalkSystem(contexts))
-                        .Add(new MainCameraThirdPersonSystem(contexts));
+                        .Add(new CameraThirdPersonSystems(contexts));
             }
         }
     }

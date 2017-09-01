@@ -17,7 +17,7 @@ namespace Project0
     {
         Normal, God
     };
-    public class InputActivity : ScriptableObject
+    public class InputActivity : DictionaryAsset
     {
         public InputMode mode;
         public bool LeftJoystick;

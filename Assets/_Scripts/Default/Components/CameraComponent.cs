@@ -13,7 +13,7 @@ using Object = UnityEngine.Object;
 
 namespace Project0
 {
-    [Game]
+    [Game, Unique]
     public class CameraComponent : IComponent
     {
     }

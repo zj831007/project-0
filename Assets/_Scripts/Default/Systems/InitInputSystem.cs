@@ -22,12 +22,11 @@ namespace Project0
                 if (activity.mode == GameConfig.instance.inputMode)
                 {
                     var entities = Contexts.sharedInstance.input.GetEntities();
-                    var activityType = activity.GetType();
                     foreach (var entity in entities)
                     {
                         if (entity.hasTransform && entity.hasName)
                         {
-                            entity.transform.value.gameObject.SetActive((bool)activityType.GetField(entity.name.value).GetValue(activity));
+                            entity.transform.value.gameObject.SetActive((bool)activity[entity.name.value]);
                         }
                     }
                     return;
