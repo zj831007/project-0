@@ -57,10 +57,14 @@ namespace Project0
         {
             if (_pivot != null)
             {
+                var camera = _game.cameraEntity;
+                if (camera != null && camera.hasPivot)
+                {
+                    camera.RemovePivot();
+                }
                 _pivot.isDestroyed = true;
                 _pivot = null;
             }
-
         }
     }
 }

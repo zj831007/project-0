@@ -15,18 +15,18 @@ namespace Project0
 {
     public abstract class Controller : MonoBehaviour
     {
-        protected abstract Systems GetSystems();
-        Systems systems;
+        protected abstract Processor GetProcessor();
+        public static Processor processor;
         protected virtual void Start()
         {
-            systems = GetSystems();
-            systems.Initialize();
+            processor = GetProcessor();
+            processor.Initialize();
         }
 
         void Update()
         {
-            systems.Execute();
-            systems.Cleanup();
+            processor.Execute();
+            processor.Cleanup();
         }
     }
 }

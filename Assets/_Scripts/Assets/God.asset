@@ -25,7 +25,7 @@ MonoBehaviour:
   CameraLiftSpeed: 50
   CameraUpDegree: 75
   CameraDownDegree: 75
-  CameraAutoLock: 1
+  CameraAutoLock: 0
   CameraFastLock: 0
   CameraAutoTime: 0.5
   CameraAutoDegree: 15

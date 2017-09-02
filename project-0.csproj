@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Scripts\Default\Assets\GameConfigAsset.cs" />
+    <Compile Include="Assets\_Scripts\Default\StringExtensions.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\DestroyEntitySystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\DestroyTransformSystem.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameCameraComponent.cs" />

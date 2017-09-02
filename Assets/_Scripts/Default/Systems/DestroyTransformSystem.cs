@@ -24,8 +24,8 @@ namespace Project0
         {
             foreach (var entity in entities)
             {
+                Object.Destroy(entity.transform.value.gameObject);
                 entity.RemoveTransform();
-                Object.Destroy(entity.transform.value);
             }
         }
 

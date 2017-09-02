@@ -8,10 +8,11 @@ using UnityEngine;
 
 namespace Project0
 {
-    //#if (!ENTITAS_DISABLE_VISUAL_DEBUGGING && UNITY_EDITOR)
+#if (!ENTITAS_DISABLE_VISUAL_DEBUGGING && UNITY_EDITOR)
     public class Processor : Feature
     {
         Dictionary<string, int> _executeSystemInfoIndices = new Dictionary<string, int>();
+        Dictionary<string, int> _InitializeSystemInfoIndices = new Dictionary<string, int>();
 
         public ThirdPersonCameraProcessor this[string name]
         {
@@ -23,6 +24,10 @@ namespace Project0
             if (system is IExecuteSystem)
             {
                 _executeSystemInfoIndices[system.GetType().Name] = _executeSystemInfoIndices.Count;
+            }
+            if (system is IInitializeSystem)
+            {
+                _InitializeSystemInfoIndices[system.GetType().Name] = _InitializeSystemInfoIndices.Count;
             }
             return this;
         }
@@ -42,6 +47,13 @@ namespace Project0
             (info.system as ITearDownSystem)?.TearDown();
             return this;
         }
+        public Processor ExecuteInitializeSystem(string name)
+        {
+            int index = _InitializeSystemInfoIndices[name];
+            var info = initializeSystemInfos[index];
+            ((IInitializeSystem)info.system).Initialize();
+            return this;
+        }
         public Processor(string name) : base(name)
         {
 
@@ -51,20 +63,14 @@ namespace Project0
 
         }
     }
-    //#else
-    //    public class Processor : Feature {
-    //        Dictionary<string, ISystem> _systems;
-
-    //        public ISystem this[string name]
-    //        {
-    //            get { return _systems[name]; }
-    //        }
-    //        public Processor(string name) : base(name)
-    //        {
-    //        }
-    //        public Processor() {
-    //        }
-    //    }
-    //#endif
+#else
+        public class Processor : Feature {
+            public Processor(string name) : base(name)
+            {
+            }
+            public Processor() {
+            }
+        }
+#endif
 
 }

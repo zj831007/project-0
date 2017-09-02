@@ -35,7 +35,7 @@ namespace Project0
                 {
                     dir.y = 0f;
                 }
-                var rotation = previous + new Vector3(-dir.y * GameConfig.instance.rightPadX, dir.x * GameConfig.instance.rightPadY, 0f);
+                var rotation = previous + new Vector3(-dir.y * GameConfig.instance.rightPadY, dir.x * GameConfig.instance.rightPadX, 0f);
                 var camTransform = camera.transform.value;
                 camTransform.eulerAngles = Vector3.SmoothDamp(previous, rotation, ref _vel, 0.2f);
                 var angles = camTransform.eulerAngles;

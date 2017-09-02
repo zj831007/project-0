@@ -13,22 +13,18 @@ using Object = UnityEngine.Object;
 
 namespace Project0
 {
-    public class InitInputActivitySystem : IInitializeSystem
+    public class InitInputSystem : IInitializeSystem
     {
         public void Initialize()
         {
-            //if (activity.mode == GameConfig.instance.inputMode)
-            //{
-            //    var entities = Contexts.sharedInstance.input.GetEntities();
-            //    foreach (var entity in entities)
-            //    {
-            //        if (entity.hasTransform && entity.hasName)
-            //        {
-            //            entity.transform.value.gameObject.SetActive((bool)activity[entity.name.value]);
-            //        }
-            //    }
-            //    return;
-            //}
+            var entities = Contexts.sharedInstance.input.GetEntities();
+            foreach (var entity in entities)
+            {
+                if (entity.hasTransform && entity.hasName)
+                {
+                    entity.transform.value.gameObject.SetActive((bool)GameConfig.instance[entity.name.value.ToCamelCase()]);
+                }
+            }
         }
     }
 }

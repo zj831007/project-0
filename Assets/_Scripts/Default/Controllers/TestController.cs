@@ -15,12 +15,12 @@ namespace Project0
 {
     public class TestController : Controller
     {
-        protected override Systems GetSystems()
+        protected override Processor GetProcessor()
         {
             var contexts = Contexts.sharedInstance;
             Processor processor = new Processor("Game Processor");
             processor
-                .Add(new InitInputActivitySystem())
+                .Add(new InitInputSystem())
                 .Add(new MainFighterWalkSystem(contexts))
                 .Add(new ThirdPersonCameraProcessor(contexts))
                 .Add(new CameraFlySystem(contexts))
