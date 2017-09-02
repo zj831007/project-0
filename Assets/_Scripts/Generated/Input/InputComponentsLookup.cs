@@ -9,15 +9,17 @@
 public static class InputComponentsLookup {
 
     public const int Coroutine = 0;
-    public const int Direction = 1;
-    public const int Name = 2;
-    public const int Transform = 3;
-    public const int Touching = 4;
+    public const int Destroyed = 1;
+    public const int Direction = 2;
+    public const int Name = 3;
+    public const int Transform = 4;
+    public const int Touching = 5;
 
-    public const int TotalComponents = 5;
+    public const int TotalComponents = 6;
 
     public static readonly string[] componentNames = {
         "Coroutine",
+        "Destroyed",
         "Direction",
         "Name",
         "Transform",
@@ -26,6 +28,7 @@ public static class InputComponentsLookup {
 
     public static readonly System.Type[] componentTypes = {
         typeof(Project0.CoroutineComponent),
+        typeof(Project0.AComponent),
         typeof(Project0.DirectionComponent),
         typeof(Project0.NameComponent),
         typeof(Project0.TransformComponent),

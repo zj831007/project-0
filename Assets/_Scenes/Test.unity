@@ -1653,25 +1653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b37e6d73c201942907ca6a31596ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputActivities:
-  - {fileID: 11400000, guid: 36b39731bd5fa6c48a18594436a47bef, type: 2}
-  - {fileID: 11400000, guid: ed9cb0ecf2ab4da4aaef7087f25d8c01, type: 2}
-  inputMode: 0
-  _rightPadX: 50
-  _rightPadY: 50
-  cameraDistance: 3.5
-  _cameraHeight: 1.5
-  _cameraFlySpeed: 50
-  _cameraWalkSpeed: 50
-  _cameraLiftSpeed: 50
-  cameraUpDegree: 75
-  cameraDownDegree: -75
-  cameraAutoLock: 1
-  cameraFastLock: 1
-  cameraAutoTime: 0.5
-  cameraAutoDegree: 15
-  _cameraAutoSpeed: 50
-  _fighterWalkSpeed: 50
+  _asset: {fileID: 11400000, guid: c1a5e405205b8174cb597fa2135e9f8b, type: 2}
 --- !u!1 &1541342502
 GameObject:
   m_ObjectHideFlags: 0

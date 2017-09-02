@@ -10,18 +10,20 @@ public static class GameComponentsLookup {
 
     public const int Camera = 0;
     public const int Coroutine = 1;
-    public const int Direction = 2;
-    public const int Fighter = 3;
-    public const int MainFighter = 4;
-    public const int Name = 5;
-    public const int Pivot = 6;
-    public const int Transform = 7;
+    public const int Destroyed = 2;
+    public const int Direction = 3;
+    public const int Fighter = 4;
+    public const int MainFighter = 5;
+    public const int Name = 6;
+    public const int Pivot = 7;
+    public const int Transform = 8;
 
-    public const int TotalComponents = 8;
+    public const int TotalComponents = 9;
 
     public static readonly string[] componentNames = {
         "Camera",
         "Coroutine",
+        "Destroyed",
         "Direction",
         "Fighter",
         "MainFighter",
@@ -33,6 +35,7 @@ public static class GameComponentsLookup {
     public static readonly System.Type[] componentTypes = {
         typeof(Project0.CameraComponent),
         typeof(Project0.CoroutineComponent),
+        typeof(Project0.AComponent),
         typeof(Project0.DirectionComponent),
         typeof(Project0.FighterComponent),
         typeof(Project0.MainFighterComponent),

@@ -17,21 +17,18 @@ namespace Project0
     {
         public void Initialize()
         {
-            foreach (var activity in GameConfig.instance.inputActivities)
-            {
-                if (activity.mode == GameConfig.instance.inputMode)
-                {
-                    var entities = Contexts.sharedInstance.input.GetEntities();
-                    foreach (var entity in entities)
-                    {
-                        if (entity.hasTransform && entity.hasName)
-                        {
-                            entity.transform.value.gameObject.SetActive((bool)activity[entity.name.value]);
-                        }
-                    }
-                    return;
-                }
-            }
+            //if (activity.mode == GameConfig.instance.inputMode)
+            //{
+            //    var entities = Contexts.sharedInstance.input.GetEntities();
+            //    foreach (var entity in entities)
+            //    {
+            //        if (entity.hasTransform && entity.hasName)
+            //        {
+            //            entity.transform.value.gameObject.SetActive((bool)activity[entity.name.value]);
+            //        }
+            //    }
+            //    return;
+            //}
         }
     }
 }

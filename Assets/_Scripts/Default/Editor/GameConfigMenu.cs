@@ -5,17 +5,17 @@ using UnityEditor;
 using System.IO;
 using Project0;
 
-namespace Project0.Editor
+namespace Project0.EditorExtensions
 {
-    public class InputActivityMenu
+    public class GameConfigMenu
     {
-        [MenuItem("Assets/Create/InputActivity", false, 12)]
+        [MenuItem("Assets/Create/GameConfigAsset", false, 12)]
         private static void CreateAsset()
         {
             var dirs = Array.ConvertAll(Selection.assetGUIDs, guid => AssetDatabase.GUIDToAssetPath(guid));
             foreach (var dir in dirs)
             {
-                AssetDatabase.CreateAsset(new InputActivity(), GetPath(dir));
+                AssetDatabase.CreateAsset(new GameConfigAsset(), GetPath(dir));
             }
         }
         static string GetPath(string dir, int order = 0)
@@ -23,13 +23,13 @@ namespace Project0.Editor
             string path;
             if (order == 0)
             {
-                path = Path.Combine(dir, "NewInputActivity.asset");
+                path = Path.Combine(dir, "NewGameConfig.asset");
             }
             else
             {
-                path = Path.Combine(dir, $"NewInputActivity{order}.asset");
+                path = Path.Combine(dir, $"NewGameConfig{order}.asset");
             }
-            var asset = AssetDatabase.LoadAssetAtPath<InputActivity>(path);
+            var asset = AssetDatabase.LoadAssetAtPath<GameConfigAsset>(path);
             if (asset) return GetPath(dir, order + 1);
             return path;
         }

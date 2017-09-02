@@ -78,34 +78,37 @@
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
     </Reference>
     <Reference Include="Entitas.Blueprints">
-      <HintPath>Assets\_Scripts\3rd\Entitas\Entitas.Blueprints.dll</HintPath>
+      <HintPath>Assets\_3rd\Entitas\Entitas.Blueprints.dll</HintPath>
     </Reference>
     <Reference Include="Entitas.CodeGeneration.Attributes">
-      <HintPath>Assets\_Scripts\3rd\Entitas\Entitas.CodeGeneration.Attributes.dll</HintPath>
+      <HintPath>Assets\_3rd\Entitas\Entitas.CodeGeneration.Attributes.dll</HintPath>
     </Reference>
     <Reference Include="Entitas">
-      <HintPath>Assets\_Scripts\3rd\Entitas\Entitas.dll</HintPath>
+      <HintPath>Assets\_3rd\Entitas\Entitas.dll</HintPath>
     </Reference>
     <Reference Include="Entitas.Unity">
-      <HintPath>Assets\_Scripts\3rd\Entitas\Entitas.Unity.dll</HintPath>
+      <HintPath>Assets\_3rd\Entitas\Entitas.Unity.dll</HintPath>
     </Reference>
     <Reference Include="Entitas.Utils">
-      <HintPath>Assets\_Scripts\3rd\Entitas\Entitas.Utils.dll</HintPath>
+      <HintPath>Assets\_3rd\Entitas\Entitas.Utils.dll</HintPath>
     </Reference>
     <Reference Include="Entitas.VisualDebugging.Unity">
-      <HintPath>Assets\_Scripts\3rd\Entitas\Entitas.VisualDebugging.Unity.dll</HintPath>
+      <HintPath>Assets\_3rd\Entitas\Entitas.VisualDebugging.Unity.dll</HintPath>
     </Reference>
     <Reference Include="fabl">
-      <HintPath>Assets\_Scripts\3rd\Entitas\fabl.dll</HintPath>
+      <HintPath>Assets\_3rd\Entitas\fabl.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\CameraThirdPersonSystems\CameraAutoLockSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CoroutineSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Assets\GameConfigAsset.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\DestroyEntitySystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\DestroyTransformSystem.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameCameraComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameMainFighterComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameCoroutineComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputCoroutineComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameDestroyedComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputDestroyedComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameDirectionComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputDirectionComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameFighterComponent.cs" />
@@ -116,6 +119,7 @@
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameTransformComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputTransformComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Components\Interfaces\ICoroutine.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Components\Interfaces\IDestroyed.cs" />
     <Compile Include="Assets\_Scripts\Generated\Components\Interfaces\IDirection.cs" />
     <Compile Include="Assets\_Scripts\Generated\Components\Interfaces\IName.cs" />
     <Compile Include="Assets\_Scripts\Generated\Components\Interfaces\ITransform.cs" />
@@ -133,53 +137,53 @@
     <Compile Include="Assets\_Scripts\Generated\Feature.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\_Scripts\Default\Components\CoroutineComponent.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Assets\_Scripts\Default\Assets\DictionaryAsset.cs" />
-    <Compile Include="Assets\_Scripts\Default\Components\TouchingComponent.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="project-0.Plugins.csproj">
       <Project>{454D2F47-9E39-EBB1-2ED8-62F672DDCDFF}</Project>
       <Name>project-0.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_3rd\Entitas\Compile.cs" />
     <Compile Include="Assets\_3rd\FXAA\Scripts\FXAA.cs" />
     <Compile Include="Assets\_3rd\FXAA\Scripts\FXAAPostEffectsBase.cs" />
-    <Compile Include="Assets\_Scripts\3rd\Entitas\Compile.cs" />
+    <Compile Include="Assets\_Scripts\Default\Assets\DictionaryAsset.cs" />
+    <Compile Include="Assets\_Scripts\Default\Assets\InputActivity.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\CameraComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\CoroutineComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\legacy\DestroyedComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\DirectionComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\FighterComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\MainFighterComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\NameComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\PivotComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\TouchingComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\TransformComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Controllers\Controller.cs" />
     <Compile Include="Assets\_Scripts\Default\Controllers\TestController.cs" />
+    <Compile Include="Assets\_Scripts\Default\Processor.cs" />
+    <Compile Include="Assets\_Scripts\Default\EntityCreators\CameraCreator.cs" />
     <Compile Include="Assets\_Scripts\Default\EntityCreators\FighterCreator.cs" />
     <Compile Include="Assets\_Scripts\Default\EntityCreators\Input\InputEntityCreator.cs" />
     <Compile Include="Assets\_Scripts\Default\EntityCreators\Input\Joystick.cs" />
     <Compile Include="Assets\_Scripts\Default\EntityCreators\Input\Pad.cs" />
     <Compile Include="Assets\_Scripts\Default\EntityCreators\Input\TouchArea.cs" />
     <Compile Include="Assets\_Scripts\Default\EntityCreators\Input\TupleButton.cs" />
-    <Compile Include="Assets\_Scripts\Default\EntityCreators\CameraCreator.cs" />
     <Compile Include="Assets\_Scripts\Default\GameConfig.cs" />
-    <Compile Include="Assets\_Scripts\Default\Assets\InputActivity.cs" />
     <Compile Include="Assets\_Scripts\Default\InputUtils.cs" />
     <Compile Include="Assets\_Scripts\Default\MakeGameObjectsActive.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\CameraFlySystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\CameraFreeRotationSystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\CameraLiftSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\CameraThirdPersonSystems\CameraAutoCheckSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\CameraThirdPersonSystems\CameraLookCameraPivotSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\CameraThirdPersonSystems\CameraOrbitAroundCameraPivotSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\CameraThirdPersonSystems\CameraPivotFollowMainFigherSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\CameraThirdPersonSystems\CameraThirdPersonSystems.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\CameraThirdPersonSystems\CameraTrailCameraPivotSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraAutoCheckSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraAutoLockSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraLookCameraPivotSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraOrbitAroundCameraPivotSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraPivotFollowMainFigherSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\ThirdPersonCameraSystems.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraTrailCameraPivotSystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\CameraWalkSystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\CleanupEmptyEntitiesSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CoroutineSystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\FighterSystems\MainFighterWalkSystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\InitInputSystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\TransformSystems\ParentSystem.cs" />
@@ -208,6 +212,7 @@
     <None Include="Assets\_Shaders\NewUnlitShader.shader" />
     <None Include="Assets\_Shaders\configs.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>

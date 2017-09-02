@@ -18,23 +18,33 @@ namespace Project0
         protected override Systems GetSystems()
         {
             var contexts = Contexts.sharedInstance;
-            switch (GameConfig.instance.inputMode)
+            Processor processor = new Processor("Game Processor");
+            processor
+                .Add(new InitInputActivitySystem())
+                .Add(new MainFighterWalkSystem(contexts))
+                .Add(new ThirdPersonCameraProcessor(contexts))
+                .Add(new CameraFlySystem(contexts))
+                .Add(new CameraWalkSystem(contexts))
+                .Add(new CameraLiftSystem(contexts))
+                .Add(new CameraFreeRotationSystem(contexts))
+                .Add(new DestroyTransformSystem(contexts))
+                .Add(new DestroyEntitySystem(contexts));
+
+            if (GameConfig.instance.isGod)
             {
-                case InputMode.God:
-                    return new Feature("Systems")
-                        //.Add(new TransformSystems(contexts))
-                        .Add(new InitInputActivitySystem())
-                        .Add(new CameraFlySystem(contexts))
-                        .Add(new CameraWalkSystem(contexts))
-                        .Add(new CameraLiftSystem(contexts))
-                        .Add(new CameraFreeRotationSystem(contexts));
-                default:
-                    return new Feature("Systems")
-                        .Add(new InitInputActivitySystem())
-                        //.Add(new TransformSystems(contexts))
-                        .Add(new MainFighterWalkSystem(contexts))
-                        .Add(new CameraThirdPersonSystems(contexts));
+                processor
+                    .DeactivateExecuteSystem("MainFighterWalkSystem")
+                    .DeactivateExecuteSystem("ThirdPersonCameraProcessor");
             }
+            else
+            {
+                processor
+                    .DeactivateExecuteSystem("CameraFlySystem")
+                    .DeactivateExecuteSystem("CameraWalkSystem")
+                    .DeactivateExecuteSystem("CameraLiftSystem")
+                    .DeactivateExecuteSystem("CameraFreeRotationSystem");
+            }
+            return processor;
         }
     }
 }

@@ -13,18 +13,15 @@ using Object = UnityEngine.Object;
 
 namespace Project0
 {
-    public class CameraThirdPersonSystems : Feature
+    public class ThirdPersonCameraProcessor : Processor
     {
-        public CameraThirdPersonSystems(Contexts contexts) : base("Main Camera Third Person Systems")
+        public ThirdPersonCameraProcessor(Contexts contexts) : base("Third Person Camera Processor")
         {
             Add(new CameraPivotFollowMainFigherSystem(contexts));
             Add(new CameraTrailCameraPivotSystem(contexts));
             Add(new CameraOrbitAroundCameraPivotSystem(contexts));
-            if (GameConfig.instance.cameraAutoLock)
-            {
-                Add(new CameraAutoCheckSystem(contexts));
-                Add(new CameraAutoLockSystem(contexts));
-            }
+            Add(new CameraAutoCheckSystem(contexts));
+            Add(new CameraAutoLockSystem(contexts));
             Add(new CameraLookCameraPivotSystem(contexts));
         }
     }

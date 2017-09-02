@@ -13,13 +13,9 @@ using Object = UnityEngine.Object;
 
 namespace Project0
 {
-    public enum InputMode
-    {
-        Normal, God
-    };
     public class InputActivity : DictionaryAsset
     {
-        public InputMode mode;
+        public bool IsGod;
         public bool LeftJoystick;
         public bool RightJoystick;
         public bool LeftTupleButton;

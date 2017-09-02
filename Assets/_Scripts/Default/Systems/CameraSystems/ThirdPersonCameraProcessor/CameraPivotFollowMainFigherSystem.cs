@@ -13,10 +13,11 @@ using Object = UnityEngine.Object;
 
 namespace Project0
 {
-    public class CameraPivotFollowMainFigherSystem : IExecuteSystem, IInitializeSystem
+    public class CameraPivotFollowMainFigherSystem : IExecuteSystem, IInitializeSystem, ITearDownSystem
     {
         GameContext _game;
         Vector3 _vel;
+        GameEntity _pivot;
 
         public CameraPivotFollowMainFigherSystem(Contexts contexts)
         {
@@ -40,19 +41,26 @@ namespace Project0
 
         public void Initialize()
         {
-            if(GameConfig.instance.inputMode == InputMode.Normal)
+            var camera = _game.cameraEntity;
+            var fighter = _game.mainFighterEntity;
+            if (camera != null && fighter != null && fighter.hasTransform)
             {
-                var camera = _game.cameraEntity;
-                var fighter = _game.mainFighterEntity;
-                if (camera != null && fighter != null && fighter.hasTransform)
-                {
-                    var pivot = Contexts.sharedInstance.game.CreateEntity();
-                    var pivotTransform = new GameObject("CameraPivot").transform;
-                    pivotTransform.position = fighter.transform.value.position + GameConfig.instance.cameraHeight;
-                    pivot.AddTransform(pivotTransform);
-                    camera.AddPivot(pivot);
-                }
+                _pivot = Contexts.sharedInstance.game.CreateEntity();
+                var pivotTransform = new GameObject("CameraPivot").transform;
+                pivotTransform.position = fighter.transform.value.position + GameConfig.instance.cameraHeight;
+                _pivot.AddTransform(pivotTransform);
+                camera.AddPivot(_pivot);
             }
+        }
+
+        public void TearDown()
+        {
+            if (_pivot != null)
+            {
+                _pivot.isDestroyed = true;
+                _pivot = null;
+            }
+
         }
     }
 }

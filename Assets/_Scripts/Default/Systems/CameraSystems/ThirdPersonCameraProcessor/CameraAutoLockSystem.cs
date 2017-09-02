@@ -42,7 +42,7 @@ namespace Project0
                         angleFromFloor *= Mathf.Sign(toCamera.y);
                         var diff = angleFromFloor - GameConfig.instance.cameraAutoDegree;
                         var y = Mathf.SmoothDamp(0f, diff * GameConfig.instance.cameraAutoSpeed, ref _yVel, 0.2f);
-                        //y = Mathf.Abs(diff) > Mathf.Abs(y) ? y : diff;
+                        y = Mathf.Abs(diff) > Mathf.Abs(y) ? y : diff;
                         camTransform.RotateAround(pivotTransform.position, Vector3.Cross(Vector3.up, toCamera), y);
                         
                         camera.ReplaceDirection((camTransform.position - pivotTransform.position).normalized);
