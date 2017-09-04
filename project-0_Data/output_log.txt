@@ -1,0 +1,28 @@
+Initialize engine version: 2017.1.0f3 (472613c02cf7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960M (ID=0x139b)
+    Vendor:   NVIDIA
+    VRAM:     4065 MB
+    Driver:   21.21.13.7878
+Begin MonoManager ReloadAssembly
+Loading C:\Users\isbdnt\Documents\project-0\project-0_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\isbdnt\Documents\project-0\project-0_Data\Managed\System.Core.dll (this message is harmless)
+Loading C:\Users\isbdnt\Documents\project-0\project-0_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Loading C:\Users\isbdnt\Documents\project-0\project-0_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Loading C:\Users\isbdnt\Documents\project-0\project-0_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Loading C:\Users\isbdnt\Documents\project-0\project-0_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
+Loading C:\Users\isbdnt\Documents\project-0\project-0_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Loading C:\Users\isbdnt\Documents\project-0\project-0_Data\Managed\Entitas.Blueprints.dll into Unity Child Domain
+Loading C:\Users\isbdnt\Documents\project-0\project-0_Data\Managed\Entitas.CodeGeneration.Attributes.dll into Unity Child Domain
+Loading C:\Users\isbdnt\Documents\project-0\project-0_Data\Managed\Entitas.dll into Unity Child Domain
+Loading C:\Users\isbdnt\Documents\project-0\project-0_Data\Managed\Entitas.Unity.dll into Unity Child Domain
+Loading C:\Users\isbdnt\Documents\project-0\project-0_Data\Managed\Entitas.Utils.dll into Unity Child Domain
+Loading C:\Users\isbdnt\Documents\project-0\project-0_Data\Managed\Entitas.VisualDebugging.Unity.dll into Unity Child Domain
+Loading C:\Users\isbdnt\Documents\project-0\project-0_Data\Managed\fabl.dll into Unity Child Domain
+Platform assembly: C:\Users\isbdnt\Documents\project-0\project-0_Data\Managed\System.dll (this message is harmless)
+- Completed reload, in  1.124 seconds
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.

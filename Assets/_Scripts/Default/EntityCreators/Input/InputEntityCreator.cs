@@ -17,7 +17,7 @@ namespace Project0.EntityCreators
     {
         protected InputEntity entity;
 
-        public void Awake()
+        protected virtual void Awake()
         {
             entity = Contexts.sharedInstance.input.CreateEntity();
             entity.AddTransform(transform);

@@ -11,7 +11,7 @@ using Entitas;
 using Entitas.CodeGeneration.Attributes;
 using Object = UnityEngine.Object;
 
-namespace Prroject0
+namespace Project0
 {
     [Input]
     public class TouchingComponent : IComponent

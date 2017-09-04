@@ -21,41 +21,8 @@ namespace Project0.EntityCreators
 
         protected virtual void Start()
         {
-            _center = transform.position;
-        }
-        protected override void OnTouchingArea(Vector3 pos)
-        {
-            Vector3 dir;
-            if (horizontal)
-            {
-                if (pos.x > _center.x)
-                {
-                    dir = new Vector3(1f, 0f, 0f);
-                }
-                else
-                {
-                    dir = new Vector3(-1f, 0f, 0f);
-                }
-            }
-            else
-            {
-                if (pos.y > _center.y)
-                {
-                    dir = new Vector3(0f, 1f, 0f);
-                }
-                else
-                {
-                    dir = new Vector3(0f, -1f, 0f);
-                }
-            }
-            entity.ReplaceDirection(dir);
-        }
-        protected override void OnTouchAreaEnd()
-        {
-            if (entity.hasDirection)
-            {
-                entity.RemoveDirection();
-            }
+            entity.AddHorizontal(horizontal);
+            entity.AddCenter(transform.position);
         }
     }
 }

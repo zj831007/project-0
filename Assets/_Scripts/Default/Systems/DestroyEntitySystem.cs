@@ -30,7 +30,7 @@ namespace Project0
 
         protected override bool Filter(GameEntity entity)
         {
-            return entity.isDestroyed;
+            return true;
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)

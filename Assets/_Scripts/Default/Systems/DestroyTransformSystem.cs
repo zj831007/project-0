@@ -31,7 +31,7 @@ namespace Project0
 
         protected override bool Filter(GameEntity entity)
         {
-            return entity.isDestroyed && entity.hasTransform;
+            return true;
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)

@@ -8,34 +8,23 @@ namespace Project0.EntityCreators
     public sealed class Joystick : TouchArea
     {
         public RectTransform hat;
-        public float offset = 25f;
+        public float distance = 25f;
 
         Vector3 _center;
+        InputEntity _hatEntity;
 
-        void Start()
+        protected override void Awake()
         {
-            _center = hat.transform.position;
+            base.Awake();
+            var hatEntity = Contexts.sharedInstance.input.CreateEntity();
+            hatEntity.AddTransform(hat);
+            hatEntity.AddCenter(hat.transform.position);
+            hatEntity.AddDistance(distance);
+            entity.AddHat(hatEntity);
         }
-        protected override void OnTouchingArea(Vector3 pos)
-        {
-            Vector3 dir = (pos - _center).normalized;
-            hat.localPosition = dir * offset;
-            entity.ReplaceDirection(dir);
-        }
-        protected override void OnTouchAreaEnd()
-        {
-            hat.localPosition = Vector3.zero;
-            if (entity.hasDirection)
-            {
-                entity.RemoveDirection();
-            }
-        }
-        protected override void Update()
-        {
-            base.Update();
-
 #if UNITY_EDITOR
-
+        public void Update()
+        {
             if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W))
             {
                 entity.ReplaceDirection((Vector3.left + Vector3.up).normalized);
@@ -68,14 +57,14 @@ namespace Project0.EntityCreators
             {
                 entity.ReplaceDirection(Vector3.up);
             }
-            else if (Input.GetKeyUp(KeyCode.A)|| Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
+            else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
             {
                 if (entity.hasDirection)
                 {
                     entity.RemoveDirection();
                 }
             }
-#endif
         }
+#endif
     }
 }

@@ -8,30 +8,57 @@
 //------------------------------------------------------------------------------
 public static class InputComponentsLookup {
 
-    public const int Coroutine = 0;
-    public const int Destroyed = 1;
-    public const int Direction = 2;
-    public const int Name = 3;
-    public const int Transform = 4;
-    public const int Touching = 5;
+    public const int Center = 0;
+    public const int Coroutine = 1;
+    public const int Destroyed = 2;
+    public const int Direction = 3;
+    public const int Distance = 4;
+    public const int Hat = 5;
+    public const int Horizontal = 6;
+    public const int ID = 7;
+    public const int Name = 8;
+    public const int Position = 9;
+    public const int PreviousPosition = 10;
+    public const int ShouldRemoveID = 11;
+    public const int Step = 12;
+    public const int Touching = 13;
+    public const int Transform = 14;
 
-    public const int TotalComponents = 6;
+    public const int TotalComponents = 15;
 
     public static readonly string[] componentNames = {
+        "Center",
         "Coroutine",
         "Destroyed",
         "Direction",
+        "Distance",
+        "Hat",
+        "Horizontal",
+        "ID",
         "Name",
-        "Transform",
-        "Touching"
+        "Position",
+        "PreviousPosition",
+        "ShouldRemoveID",
+        "Step",
+        "Touching",
+        "Transform"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Project0.CenterComponent),
         typeof(Project0.CoroutineComponent),
-        typeof(Project0.AComponent),
+        typeof(Project0.DestroyedComponent),
         typeof(Project0.DirectionComponent),
+        typeof(Project0.DistanceComponent),
+        typeof(Project0.HatComponent),
+        typeof(Project0.HorizontalComponent),
+        typeof(Project0.IDComponent),
         typeof(Project0.NameComponent),
-        typeof(Project0.TransformComponent),
-        typeof(Prroject0.TouchingComponent)
+        typeof(Project0.Position),
+        typeof(Project0.PreviousPosition),
+        typeof(Project0.ShouldRemoveID),
+        typeof(Project0.StepComponent),
+        typeof(Project0.TouchingComponent),
+        typeof(Project0.TransformComponent)
     };
 }

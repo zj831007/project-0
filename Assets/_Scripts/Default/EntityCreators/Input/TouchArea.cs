@@ -2,33 +2,33 @@
 using Project0;
 using UnityEngine.EventSystems;
 using System;
+using System.Collections.Generic;
 
 namespace Project0.EntityCreators
 {
     public abstract class TouchArea : InputEntityCreator, IPointerDownHandler, IPointerUpHandler
     {
-        int? _id;
         bool moved;
-
-        protected abstract void OnTouchAreaEnd();
-        protected abstract void OnTouchingArea(Vector3 pos);
-        protected virtual void Update()
-        {
-            if (_id != null)
-            {
-                OnTouchingArea(InputUtils.GetTouchPosition(_id.Value));
-            }
-        }
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            _id = eventData.pointerId;
+            entity.ReplaceID(eventData.pointerId);
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            _id = null;
-            OnTouchAreaEnd();
+            if (entity.hasID)
+            {
+                entity.RemoveID();
+            }
+            if (entity.hasPosition)
+            {
+                entity.RemovePosition();
+            }
+            if (entity.hasPreviousPosition)
+            {
+                entity.RemovePreviousPosition();
+            }
         }
     }
 }

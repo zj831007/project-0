@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 public partial class InputEntity {
 
-    static readonly Prroject0.TouchingComponent touchingComponent = new Prroject0.TouchingComponent();
+    static readonly Project0.TouchingComponent touchingComponent = new Project0.TouchingComponent();
 
     public bool isTouching {
         get { return HasComponent(InputComponentsLookup.Touching); }

@@ -12,11 +12,14 @@ namespace Project0
     public class Processor : Feature
     {
         Dictionary<string, int> _executeSystemInfoIndices = new Dictionary<string, int>();
-        Dictionary<string, int> _InitializeSystemInfoIndices = new Dictionary<string, int>();
+        Dictionary<string, int> _initializeSystemInfoIndices = new Dictionary<string, int>();
 
-        public ThirdPersonCameraProcessor this[string name]
+        public Processor this[string name]
         {
-            get { return (ThirdPersonCameraProcessor)executeSystemInfos[_executeSystemInfoIndices[name]].system; }
+            get
+            {
+                return (Processor)executeSystemInfos[_executeSystemInfoIndices[name]].system;
+            }
         }
         public override Systems Add(ISystem system)
         {
@@ -27,7 +30,7 @@ namespace Project0
             }
             if (system is IInitializeSystem)
             {
-                _InitializeSystemInfoIndices[system.GetType().Name] = _InitializeSystemInfoIndices.Count;
+                _initializeSystemInfoIndices[system.GetType().Name] = _initializeSystemInfoIndices.Count;
             }
             return this;
         }
@@ -49,7 +52,7 @@ namespace Project0
         }
         public Processor ExecuteInitializeSystem(string name)
         {
-            int index = _InitializeSystemInfoIndices[name];
+            int index = _initializeSystemInfoIndices[name];
             var info = initializeSystemInfos[index];
             ((IInitializeSystem)info.system).Initialize();
             return this;
@@ -63,14 +66,78 @@ namespace Project0
 
         }
     }
+
 #else
-        public class Processor : Feature {
-            public Processor(string name) : base(name)
+        
+    public class Processor : Feature
+    {
+        Dictionary<string, int> _executeSystemIndices = new Dictionary<string, int>();
+        List<bool> _executeSystemActivities = new List<bool>();
+        Dictionary<string, int> _initializeSystemIndices = new Dictionary<string, int>();
+
+        public Processor this[string name]
+        {
+            get
             {
-            }
-            public Processor() {
+                return (Processor)_executeSystems[_executeSystemIndices[name]];
             }
         }
+        public override void Execute()
+        {
+            for (int i = 0; i < _executeSystems.Count; i++)
+            {
+                if (_executeSystemActivities[i])
+                {
+                    _executeSystems[i].Execute();
+                }
+            }
+        }
+        public override Systems Add(ISystem system)
+        {
+            base.Add(system);
+            if (system is IExecuteSystem)
+            {
+                _executeSystemIndices[system.GetType().Name] = _executeSystemIndices.Count;
+                _executeSystemActivities.Add(true);
+            }
+            if (system is IInitializeSystem)
+            {
+                _initializeSystemIndices[system.GetType().Name] = _initializeSystemIndices.Count;
+            }
+            return this;
+        }
+        public Processor ActivateExecuteSystem(string name)
+        {
+            int index = _executeSystemIndices[name];
+            var system = _executeSystems[index];
+            _executeSystemActivities[index] = true;
+            (system as IInitializeSystem)?.Initialize();
+            return this;
+        }
+        public Processor DeactivateExecuteSystem(string name)
+        {
+            int index = _executeSystemIndices[name];
+            var system = _executeSystems[index];
+            _executeSystemActivities[index] = false;
+            (system as ITearDownSystem)?.TearDown();
+            return this;
+        }
+        public Processor ExecuteInitializeSystem(string name)
+        {
+            int index = _initializeSystemIndices[name];
+            var system = _initializeSystems[index];
+            system.Initialize();
+            return this;
+        }
+        public Processor(string name) : base(name)
+        {
+
+        }
+        public Processor()
+        {
+
+        }
+    }
 #endif
 
 }

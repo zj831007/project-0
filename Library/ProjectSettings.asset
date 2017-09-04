@@ -4,9 +4,9 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
-  productGUID: 173d187e9df0579438815d4c60d46a37
+  productGUID: 633236caad313f84f80ea580e3a58c14
   AndroidProfiler: 0
-  defaultScreenOrientation: 3
+  defaultScreenOrientation: 2
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
@@ -497,14 +497,7 @@ PlayerSettings:
   webGLUseEmbeddedResources: 0
   webGLUseWasm: 0
   webGLCompressionFormat: 1
-  scriptingDefineSymbols:
-    1: CROSS_PLATFORM_INPUT
-    4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
-    7: CROSS_PLATFORM_INPUT;MOBILE_INPUT
-    14: MOBILE_INPUT
-    17: MOBILE_INPUT
-    20: MOBILE_INPUT
-    22: MOBILE_INPUT
+  scriptingDefineSymbols: {}
   platformArchitecture: {}
   scriptingBackend: {}
   incrementalIl2cppBuild: {}
@@ -594,9 +587,9 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
-  cloudProjectId: dc3238fc-ca4a-4266-8881-9f4c9bc9ed36
-  projectName: project-0
+  apiCompatibilityLevel: 3
+  cloudProjectId: c9f6859c-4d4d-49cc-9f9e-3e445a8895f9
+  projectName: project-0 (1)
   organizationId: isbdnt
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0

@@ -62,12 +62,12 @@ namespace Project0
 
         public float rightPadX
         {
-            get { return _asset.rightPadX / 10f; }
+            get { return _asset.rightPadX / 20f; }
         }
 
         public float rightPadY
         {
-            get { return _asset.rightPadY / 10f; }
+            get { return _asset.rightPadY / 20f; }
         }
 
         public float cameraDistance

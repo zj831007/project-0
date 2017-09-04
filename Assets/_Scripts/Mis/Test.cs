@@ -13,14 +13,8 @@ using Object = UnityEngine.Object;
 
 namespace Project0
 {
-    public class Test : MonoBehaviour
-    {
-        private void Start()
-        {
-            RaycastHit hit;
-            if (Physics.Raycast(Vector3.up, -Vector3.up, out hit, 4))
-            {
-            }
-        }
-    }
+    //public class Test : MonoBehaviour
+    //{
+
+    //}
 }

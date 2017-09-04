@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 public partial class InputEntity {
 
-    static readonly Project0.AComponent destroyedComponent = new Project0.AComponent();
+    static readonly Project0.DestroyedComponent destroyedComponent = new Project0.DestroyedComponent();
 
     public bool isDestroyed {
         get { return HasComponent(InputComponentsLookup.Destroyed); }

@@ -21,6 +21,10 @@ namespace Project0
             Processor processor = new Processor("Game Processor");
             processor
                 .Add(new InitInputSystem())
+                .Add(new TouchPositionSystem(contexts))
+                .Add(new JoystickSystem(contexts))
+                .Add(new TupleButtonSystem(contexts))
+                .Add(new PadSystem(contexts))
                 .Add(new MainFighterWalkSystem(contexts))
                 .Add(new ThirdPersonCameraProcessor(contexts))
                 .Add(new CameraFlySystem(contexts))
