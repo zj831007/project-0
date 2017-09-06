@@ -12,12 +12,15 @@
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <TargetFrameworkProfile></TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Editor:5</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>2017.1.0f3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>6</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -170,19 +173,15 @@
       <Project>{1D93FB0B-52B9-8CBA-01FE-E038DE8DE2AB}</Project>
       <Name>project-0</Name>
     </ProjectReference>
-    <ProjectReference Include="project-0.Plugins.csproj">
-      <Project>{454D2F47-9E39-EBB1-2ED8-62F672DDCDFF}</Project>
-      <Name>project-0.Plugins</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\_Scripts\Default\Editor\ExitPlayModeOnScriptCompile.cs" />
-    <Compile Include="Assets\_Scripts\Default\Editor\FindMissingScriptsRecursively.cs" />
-    <Compile Include="Assets\_Scripts\Default\Editor\GameConfigInspector.cs" />
-    <Compile Include="Assets\_Scripts\Default\Editor\GameConfigMenu.cs" />
+    <Compile Include="Assets\_Scripts\Editor\DictionaryAssetExtension.cs" />
+    <Compile Include="Assets\_Scripts\Editor\ExitPlayModeOnScriptCompile.cs" />
+    <Compile Include="Assets\_Scripts\Editor\FindMissingScriptsRecursively.cs" />
+    <Compile Include="Assets\_Scripts\Editor\GameConfigInspector.cs" />
+    <Compile Include="Assets\_Scripts\Editor\GameConfigMenu.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Plugins\CSI\CSharpInterpreter_Include.txt" />
     <None Include="Assets\_3rd\FXAA\Shaders\Fxaa3.shader" />
     <None Include="Assets\_3rd\FXAA\Shaders\Fxaa3_9.cginc" />
     <None Include="Assets\_Shaders\Cel.shader" />

@@ -29,22 +29,35 @@ namespace Project0
             if (CameraAutoCheckSystem.autoLock)
             {
                 var camera = _game.cameraEntity;
-                if (camera != null && camera.hasTransform && camera.hasPivot)
+                if (camera != null && camera.hasTransform && camera.hasPivot && camera.hasDirection)
                 {
                     var pivot = camera.pivot.value;
                     if (pivot.hasTransform)
                     {
                         var camTransform = camera.transform.value;
                         var pivotTransform = pivot.transform.value;
-                        var toCamera = camTransform.position - pivotTransform.position;
-                        var floor = new Vector3(toCamera.x, 0f, toCamera.z);
-                        var angleFromFloor = Vector3.Angle(toCamera, floor);
-                        angleFromFloor *= Mathf.Sign(toCamera.y);
-                        var diff = angleFromFloor - GameConfig.instance.cameraAutoDegree;
+                        var toCamera = camera.direction.value;
+                        var autoAngle = GameConfig.instance.cameraAutoDegree;
+                        if (camera.isUseTerrainNormal)
+                        {
+                            var figher = _game.mainFighterEntity;
+                            if (figher != null && figher.hasTransform)
+                            {
+                                RaycastHit _hit;
+                                if (Physics.Raycast(figher.transform.value.position, Vector3.down, out _hit, 5f, GameConfig.instance.fighterTerrainMask))
+                                {
+                                    var planeNormal = Vector3.Cross(Vector3.up, camera.direction.value);
+                                    var planeAngle = Vector3.Angle(Vector3.up, Vector3.ProjectOnPlane(_hit.normal, planeNormal));
+                                    autoAngle -= planeAngle;
+                                }
+                            }
+                        }
+                        var angle = toCamera.AngleFromXZ() * Mathf.Sign(toCamera.y);
+                        var diff = angle - autoAngle;
                         var y = Mathf.SmoothDamp(0f, diff * GameConfig.instance.cameraAutoSpeed, ref _yVel, 0.2f);
                         y = Mathf.Abs(diff) > Mathf.Abs(y) ? y : diff;
                         camTransform.RotateAround(pivotTransform.position, Vector3.Cross(Vector3.up, toCamera), y);
-                        
+
                         camera.ReplaceDirection((camTransform.position - pivotTransform.position).normalized);
                     }
                 }

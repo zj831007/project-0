@@ -17,5 +17,9 @@ namespace Project0
     public class HatComponent : IComponent
     {
         public InputEntity value;
+        public override string ToString()
+        {
+            return "";
+        }
     }
 }

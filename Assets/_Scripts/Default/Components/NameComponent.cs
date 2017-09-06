@@ -8,5 +8,9 @@ namespace Project0
     public class NameComponent : IComponent
     {
         public string value;
+        public override string ToString()
+        {
+            return value;
+        }
     }
 }

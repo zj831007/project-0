@@ -16,5 +16,9 @@ namespace Project0
     [Game, Unique]
     public class CameraComponent : IComponent
     {
+        public override string ToString()
+        {
+            return "Camera";
+        }
     }
 }

@@ -12,28 +12,32 @@ public static class GameComponentsLookup {
     public const int Coroutine = 1;
     public const int Destroyed = 2;
     public const int Direction = 3;
-    public const int Fighter = 4;
-    public const int ID = 5;
-    public const int MainFighter = 6;
-    public const int Name = 7;
-    public const int Pivot = 8;
-    public const int Position = 9;
-    public const int Transform = 10;
+    public const int Distance = 4;
+    public const int Fighter = 5;
+    public const int ID = 6;
+    public const int MainFighter = 7;
+    public const int Name = 8;
+    public const int Pivot = 9;
+    public const int Position = 10;
+    public const int Transform = 11;
+    public const int UseTerrainNormal = 12;
 
-    public const int TotalComponents = 11;
+    public const int TotalComponents = 13;
 
     public static readonly string[] componentNames = {
         "Camera",
         "Coroutine",
         "Destroyed",
         "Direction",
+        "Distance",
         "Fighter",
         "ID",
         "MainFighter",
         "Name",
         "Pivot",
         "Position",
-        "Transform"
+        "Transform",
+        "UseTerrainNormal"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -41,12 +45,14 @@ public static class GameComponentsLookup {
         typeof(Project0.CoroutineComponent),
         typeof(Project0.DestroyedComponent),
         typeof(Project0.DirectionComponent),
+        typeof(Project0.DistanceComponent),
         typeof(Project0.FighterComponent),
         typeof(Project0.IDComponent),
         typeof(Project0.MainFighterComponent),
         typeof(Project0.NameComponent),
         typeof(Project0.PivotComponent),
         typeof(Project0.Position),
-        typeof(Project0.TransformComponent)
+        typeof(Project0.TransformComponent),
+        typeof(Project0.UseTerrainNormal)
     };
 }

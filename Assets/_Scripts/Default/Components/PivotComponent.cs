@@ -17,5 +17,9 @@ namespace Project0
     public class PivotComponent : IComponent
     {
         public GameEntity value;
+        public override string ToString()
+        {
+            return "";
+        }
     }
 }

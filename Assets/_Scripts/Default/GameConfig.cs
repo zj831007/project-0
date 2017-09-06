@@ -70,9 +70,19 @@ namespace Project0
             get { return _asset.rightPadY / 20f; }
         }
 
-        public float cameraDistance
+        public LayerMask cameraBlockMask
         {
-            get { return _asset.cameraDistance; }
+            get { return _asset.cameraBlockMask; }
+        }
+
+        public float cameraMaxDistance
+        {
+            get { return _asset.cameraMaxDistance; }
+        }
+
+        public float cameraMinDistance
+        {
+            get { return _asset.cameraMinDistance; }
         }
 
         public Vector3 cameraHeight
@@ -127,6 +137,11 @@ namespace Project0
         public float cameraAutoSpeed
         {
             get { return _asset.cameraAutoSpeed / 50f; }
+        }
+
+        public LayerMask fighterTerrainMask
+        {
+            get { return _asset.fighterTerrainMask; }
         }
 
         public float fighterWalkSpeed

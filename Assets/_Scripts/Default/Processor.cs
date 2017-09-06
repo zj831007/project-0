@@ -1,10 +1,5 @@
-﻿using System;
+﻿using Entitas;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Entitas;
-using UnityEngine;
 
 namespace Project0
 {
@@ -28,7 +23,7 @@ namespace Project0
             {
                 _executeSystemInfoIndices[system.GetType().Name] = _executeSystemInfoIndices.Count;
             }
-            if (system is IInitializeSystem)
+            if (system is Entitas.IInitializeSystem)
             {
                 _initializeSystemInfoIndices[system.GetType().Name] = _initializeSystemInfoIndices.Count;
             }

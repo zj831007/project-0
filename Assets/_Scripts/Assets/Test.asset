@@ -16,9 +16,13 @@ MonoBehaviour:
   rightJoystick: 1
   leftTupleButton: 1
   rightPad: 1
-  rightPadX: 15.3
-  rightPadY: 6.6
-  cameraDistance: 5
+  rightPadX: 61.5
+  rightPadY: 21.4
+  cameraBlockMask:
+    serializedVersion: 2
+    m_Bits: 256
+  cameraMaxDistance: 5
+  cameraMinDistance: 1.1
   cameraHeight: 1.5
   cameraFlySpeed: 50
   cameraWalkSpeed: 50
@@ -26,8 +30,11 @@ MonoBehaviour:
   cameraUpDegree: 75
   cameraDownDegree: -75
   cameraAutoLock: 1
-  cameraFastLock: 0
+  cameraFastLock: 1
   cameraAutoTime: 0.5
   cameraAutoDegree: 15
   cameraAutoSpeed: 50
+  fighterTerrainMask:
+    serializedVersion: 2
+    m_Bits: 256
   fighterWalkSpeed: 50

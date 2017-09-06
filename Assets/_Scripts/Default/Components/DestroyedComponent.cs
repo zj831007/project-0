@@ -16,6 +16,9 @@ namespace Project0
     [Game, Input]
     public class DestroyedComponent : IComponent
     {
-
+        public override string ToString()
+        {
+            return "Destroyed";
+        }
     }
 }

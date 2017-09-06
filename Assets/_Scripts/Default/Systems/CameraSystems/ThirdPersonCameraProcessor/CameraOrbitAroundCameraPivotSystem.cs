@@ -50,7 +50,7 @@ namespace Project0
         {
             var pad = entities[0];
             var camera = _game.cameraEntity;
-            if (camera != null && camera.hasTransform && camera.hasPivot)
+            if (camera != null && camera.hasTransform && camera.hasPivot && camera.hasDirection)
             {
                 var pivot = camera.pivot.value;
                 if (pivot.hasTransform)
@@ -64,13 +64,11 @@ namespace Project0
                     var pivotTransform = pivot.transform.value;
                     var x = Mathf.SmoothDamp(0f, dir.x, ref _xVel, 0.2f) * GameConfig.instance.rightPadX;
                     var y = Mathf.SmoothDamp(0f, dir.y, ref _yVel, 0.2f) * GameConfig.instance.rightPadY;
-                    var toCamera = camTransform.position - pivotTransform.position;
-                    var floor = new Vector3(toCamera.x, 0f, toCamera.z);
-                    var angleFromFloor = Vector3.Angle(toCamera, floor);
-                    angleFromFloor *= Mathf.Sign(toCamera.y);
+                    var toCamera = camera.direction.value;
+                    var angle = toCamera.AngleFromXZ() * Mathf.Sign(toCamera.y);
                     var min = GameConfig.instance.cameraDownDegree;
                     var max = GameConfig.instance.cameraUpDegree;
-                    y = Math.Min(angleFromFloor - min, Mathf.Max(angleFromFloor - max, y));
+                    y = Math.Min(angle - min, Mathf.Max(angle - max, y));
                     camTransform.RotateAround(pivotTransform.position, Vector3.up, x);
                     camTransform.RotateAround(pivotTransform.position, Vector3.Cross(Vector3.up, toCamera), y);
                     camera.ReplaceDirection((camTransform.position - pivotTransform.position).normalized);

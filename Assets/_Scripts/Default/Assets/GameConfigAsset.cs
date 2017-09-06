@@ -24,8 +24,11 @@ namespace Project0
         public float rightPadX = 50f;
         [Range(0f, 100f)]
         public float rightPadY = 50f;
+        public LayerMask cameraBlockMask;
         [Range(0f, 20f)]
-        public float cameraDistance = 5f;
+        public float cameraMaxDistance = 5f;
+        [Range(0f, 10f)]
+        public float cameraMinDistance = 2f;
         [Range(0f, 5f)]
         public float cameraHeight = 1.5f;
         [Range(0f, 100f)]
@@ -46,6 +49,7 @@ namespace Project0
         public float cameraAutoDegree = 15f;
         [Range(0f, 100f)]
         public float cameraAutoSpeed = 50f;
+        public LayerMask fighterTerrainMask;
         [Range(0f, 100f)]
         public float fighterWalkSpeed = 50f;
     }

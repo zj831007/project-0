@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "project-0", "project-0.csproj", "{1D93FB0B-52B9-8CBA-01FE-E038DE8DE2AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "project-0.Plugins", "project-0.Plugins.csproj", "{454D2F47-9E39-EBB1-2ED8-62F672DDCDFF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "project-0.Editor", "project-0.Editor.csproj", "{9456C3E3-0597-1D34-518B-43489EA8D313}"
 EndProject
 Global
@@ -17,10 +15,6 @@ Global
 		{1D93FB0B-52B9-8CBA-01FE-E038DE8DE2AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D93FB0B-52B9-8CBA-01FE-E038DE8DE2AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D93FB0B-52B9-8CBA-01FE-E038DE8DE2AB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{454D2F47-9E39-EBB1-2ED8-62F672DDCDFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{454D2F47-9E39-EBB1-2ED8-62F672DDCDFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{454D2F47-9E39-EBB1-2ED8-62F672DDCDFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{454D2F47-9E39-EBB1-2ED8-62F672DDCDFF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9456C3E3-0597-1D34-518B-43489EA8D313}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9456C3E3-0597-1D34-518B-43489EA8D313}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9456C3E3-0597-1D34-518B-43489EA8D313}.Release|Any CPU.ActiveCfg = Release|Any CPU

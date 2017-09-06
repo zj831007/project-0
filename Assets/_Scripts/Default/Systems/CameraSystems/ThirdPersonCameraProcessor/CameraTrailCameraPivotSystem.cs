@@ -26,24 +26,20 @@ namespace Project0
         {
             var camera = _game.cameraEntity;
             var fighter = _game.mainFighterEntity;
-            if (camera != null && camera.hasTransform && camera.hasPivot)
+            if (camera != null && camera.hasTransform && camera.hasPivot && camera.hasDistance && camera.hasDirection)
             {
                 var pivot = camera.pivot.value;
                 if (pivot.hasTransform)
                 {
                     var camTransform = camera.transform.value;
                     var pivotTransform = pivot.transform.value;
-                    Vector3 dir;
-                    if (camera.hasDirection)
-                    {
-                        dir = camera.direction.value;
-                    }
-                    else
-                    {
-                        dir = (camTransform.position - pivotTransform.position).normalized;
-                        camera.AddDirection(dir);
-                    }
-                    camTransform.position = pivotTransform.position + dir * GameConfig.instance.cameraDistance;
+                    var oldDir = camera.direction.value;
+                    var newDir = camTransform.position - pivotTransform.position;
+                    var angle = oldDir.AngleFromXZ();
+                    var floor = new Vector3(newDir.x, 0f, newDir.z);
+                    newDir = (Quaternion.AngleAxis(angle, Vector3.Cross(floor, Vector3.up)) * floor).normalized;
+                    camTransform.position = pivotTransform.position + newDir * camera.distance.value;
+                    camera.ReplaceDirection(newDir);
                 }
             }
         }

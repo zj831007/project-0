@@ -17,5 +17,9 @@ namespace Project0
     public class Position : IComponent
     {
         public Vector3 value;
+        public override string ToString()
+        {
+            return "";
+        }
     }
 }

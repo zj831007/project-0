@@ -16,5 +16,9 @@ namespace Project0
     [Game]
     public class FighterComponent : IComponent
     {
+        public override string ToString()
+        {
+            return "Fighter";
+        }
     }
 }

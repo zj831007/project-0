@@ -16,6 +16,9 @@ namespace Project0
     [Input]
     public class TouchingComponent : IComponent
     {
-
+        public override string ToString()
+        {
+            return "";
+        }
     }
 }

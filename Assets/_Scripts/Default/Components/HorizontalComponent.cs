@@ -17,5 +17,9 @@ namespace Project0
     public class HorizontalComponent : IComponent
     {
         public bool value;
+        public override string ToString()
+        {
+            return "";
+        }
     }
 }

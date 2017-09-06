@@ -17,5 +17,9 @@ namespace Project0
     public class CoroutineComponent : IComponent
     {
         public IEnumerator value;
+        public override string ToString()
+        {
+            return "Coroutine";
+        }
     }
 }

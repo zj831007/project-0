@@ -17,5 +17,9 @@ namespace Project0
     public class StepComponent : IComponent
     {
         public int value;
+        public override string ToString()
+        {
+            return "";
+        }
     }
 }

@@ -17,5 +17,9 @@ namespace Project0
     public class IDComponent : IComponent
     {
         public int value;
+        public override string ToString()
+        {
+            return $"ID:{value}";
+        }
     }
 }

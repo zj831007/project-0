@@ -16,6 +16,9 @@ namespace Project0
     [Game, Unique]
     public class MainFighterComponent : IComponent
     {
-
+        public override string ToString()
+        {
+            return "Main";
+        }
     }
 }
