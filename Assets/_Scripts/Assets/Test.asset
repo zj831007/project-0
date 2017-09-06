@@ -16,7 +16,7 @@ MonoBehaviour:
   rightJoystick: 1
   leftTupleButton: 1
   rightPad: 1
-  rightPadX: 61.5
+  rightPadX: 51.7
   rightPadY: 21.4
   cameraBlockMask:
     serializedVersion: 2
@@ -27,8 +27,8 @@ MonoBehaviour:
   cameraFlySpeed: 50
   cameraWalkSpeed: 50
   cameraLiftSpeed: 50
-  cameraUpDegree: 75
-  cameraDownDegree: -75
+  cameraUpDegree: 45
+  cameraDownDegree: -45
   cameraAutoLock: 1
   cameraFastLock: 1
   cameraAutoTime: 0.5

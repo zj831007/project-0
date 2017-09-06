@@ -100,10 +100,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\_Scripts\Default\Components\legacy\TerrainNormal.cs" />
-    <Compile Include="Assets\_Scripts\Default\Extensions\Vector3Extension.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraTerrainSystem.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameCameraComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameMainFighterComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameAngleOffsetComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputCenterComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameCoroutineComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputCoroutineComponent.cs" />
@@ -119,8 +119,11 @@
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameIDComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputIDComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputShouldRemoveIDComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameTerrainNormalComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameUseTerrainNormalComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameNameComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputNameComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameNormalComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePivotComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePositionComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputPositionComponent.cs" />
@@ -129,7 +132,6 @@
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputTouchingComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameTransformComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputTransformComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameUseTerrainNormalComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Components\Interfaces\ICoroutine.cs" />
     <Compile Include="Assets\_Scripts\Generated\Components\Interfaces\IDestroyed.cs" />
     <Compile Include="Assets\_Scripts\Generated\Components\Interfaces\IDirection.cs" />
@@ -150,6 +152,20 @@
     <Compile Include="Assets\_Scripts\Generated\Game\GameEntity.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\InputEntity.cs" />
     <Compile Include="Assets\_Scripts\Generated\Feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\_Scripts\Default\Components\AngleOffset.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\_Scripts\Default\Components\NormalComponent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\_Scripts\Default\Components\legacy\TerrainNormal.cs" />
+    <Compile Include="Assets\_Scripts\Default\Extensions\TransformExtension.cs" />
+    <Compile Include="Assets\_Scripts\Default\Extensions\Vector3Extension.cs" />
+    <Compile Include="Assets\_Scripts\Default\IEntityProvider.cs" />
+    <Compile Include="Assets\_Scripts\Default\NormalDetector.cs" />
+    <Compile Include="Assets\_Scripts\EntityCreators\TerrainCreator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Scripts\Default\Components\legacy\UseTerrainNormal.cs" />

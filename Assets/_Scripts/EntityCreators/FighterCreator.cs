@@ -13,16 +13,22 @@ using Object = UnityEngine.Object;
 
 namespace Project0.EntityCreators
 {
-    public class FighterCreator : MonoBehaviour
+    public class FighterCreator : MonoBehaviour, IGameEntityProvider
     {
         public bool isMain;
 
+        public GameEntity gameEntity
+        {
+            get { return _entity; }
+        }
+        GameEntity _entity;
+
         private void Awake()
         {
-            var entity = Contexts.sharedInstance.game.CreateEntity();
-            entity.isFighter = true;
-            entity.isMainFighter = isMain;
-            entity.AddTransform(transform);
+            _entity = Contexts.sharedInstance.game.CreateEntity();
+            _entity.isFighter = true;
+            _entity.isMainFighter = isMain;
+            _entity.AddTransform(transform);
         }
     }
 }

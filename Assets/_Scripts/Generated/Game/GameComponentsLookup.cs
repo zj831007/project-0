@@ -8,23 +8,27 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Camera = 0;
-    public const int Coroutine = 1;
-    public const int Destroyed = 2;
-    public const int Direction = 3;
-    public const int Distance = 4;
-    public const int Fighter = 5;
-    public const int ID = 6;
-    public const int MainFighter = 7;
-    public const int Name = 8;
-    public const int Pivot = 9;
-    public const int Position = 10;
-    public const int Transform = 11;
-    public const int UseTerrainNormal = 12;
+    public const int AngleOffset = 0;
+    public const int Camera = 1;
+    public const int Coroutine = 2;
+    public const int Destroyed = 3;
+    public const int Direction = 4;
+    public const int Distance = 5;
+    public const int Fighter = 6;
+    public const int ID = 7;
+    public const int MainFighter = 8;
+    public const int Name = 9;
+    public const int Normal = 10;
+    public const int Pivot = 11;
+    public const int Position = 12;
+    public const int TerrainNormal = 13;
+    public const int Transform = 14;
+    public const int UseTerrainNormal = 15;
 
-    public const int TotalComponents = 13;
+    public const int TotalComponents = 16;
 
     public static readonly string[] componentNames = {
+        "AngleOffset",
         "Camera",
         "Coroutine",
         "Destroyed",
@@ -34,13 +38,16 @@ public static class GameComponentsLookup {
         "ID",
         "MainFighter",
         "Name",
+        "Normal",
         "Pivot",
         "Position",
+        "TerrainNormal",
         "Transform",
         "UseTerrainNormal"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Project0.AngleOffset),
         typeof(Project0.CameraComponent),
         typeof(Project0.CoroutineComponent),
         typeof(Project0.DestroyedComponent),
@@ -50,8 +57,10 @@ public static class GameComponentsLookup {
         typeof(Project0.IDComponent),
         typeof(Project0.MainFighterComponent),
         typeof(Project0.NameComponent),
+        typeof(Project0.NormalComponent),
         typeof(Project0.PivotComponent),
         typeof(Project0.Position),
+        typeof(Project0.TerrainNormal),
         typeof(Project0.TransformComponent),
         typeof(Project0.UseTerrainNormal)
     };

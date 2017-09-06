@@ -15,7 +15,7 @@ namespace Project0.EntityCreators
 {
     public class InputEntityCreator : MonoBehaviour
     {
-        protected InputEntity entity;
+        public InputEntity entity { get; protected set; }
 
         protected virtual void Awake()
         {

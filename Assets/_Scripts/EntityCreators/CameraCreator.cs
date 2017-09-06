@@ -13,13 +13,20 @@ using Object = UnityEngine.Object;
 
 namespace Project0.EntityCreators
 {
-    public class CameraCreator : MonoBehaviour
+    public class CameraCreator : MonoBehaviour, IGameEntityProvider
     {
+        public GameEntity gameEntity
+        {
+            get { return _entity; }
+        }
+
+        GameEntity _entity;
+
         private void Awake()
         {
-            var cam = Contexts.sharedInstance.game.CreateEntity();
-            cam.isCamera = true;
-            cam.AddTransform(transform);
+            _entity = Contexts.sharedInstance.game.CreateEntity();
+            _entity.isCamera = true;
+            _entity.AddTransform(transform);
         }
     }
 }

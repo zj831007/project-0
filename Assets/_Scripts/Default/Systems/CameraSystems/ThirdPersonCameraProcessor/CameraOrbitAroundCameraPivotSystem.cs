@@ -65,9 +65,14 @@ namespace Project0
                     var x = Mathf.SmoothDamp(0f, dir.x, ref _xVel, 0.2f) * GameConfig.instance.rightPadX;
                     var y = Mathf.SmoothDamp(0f, dir.y, ref _yVel, 0.2f) * GameConfig.instance.rightPadY;
                     var toCamera = camera.direction.value;
-                    var angle = toCamera.AngleFromXZ() * Mathf.Sign(toCamera.y);
+                    var angle = toCamera.AngleFromXZ();
                     var min = GameConfig.instance.cameraDownDegree;
                     var max = GameConfig.instance.cameraUpDegree;
+                    if (camera.hasAngleOffset)
+                    {
+                        min = Mathf.Max(-89f, min - camera.angleOffset.value);
+                        //max = Mathf.Min(89f, max - camera.angleOffset.value);
+                    }
                     y = Math.Min(angle - min, Mathf.Max(angle - max, y));
                     camTransform.RotateAround(pivotTransform.position, Vector3.up, x);
                     camTransform.RotateAround(pivotTransform.position, Vector3.Cross(Vector3.up, toCamera), y);

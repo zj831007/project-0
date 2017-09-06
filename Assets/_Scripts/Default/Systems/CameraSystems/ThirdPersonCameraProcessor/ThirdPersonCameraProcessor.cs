@@ -21,6 +21,7 @@ namespace Project0
         {
             _game = contexts.game;
             Add(new CameraPivotFollowMainFigherSystem(contexts));
+            Add(new CameraTerrainSystem(contexts));
             Add(new CameraTrailCameraPivotSystem(contexts));
             Add(new CameraOrbitAroundCameraPivotSystem(contexts));
             Add(new CameraAutoCheckSystem(contexts));
@@ -47,7 +48,6 @@ namespace Project0
                     {
                         var dir = (camera.transform.value.position - pivot.transform.value.position).normalized;
                         camera.AddDirection(dir);
-                        //camera.isUseTerrainNormal = true;//pass
                     }
                 }
             }

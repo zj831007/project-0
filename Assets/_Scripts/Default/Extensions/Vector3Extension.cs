@@ -11,7 +11,11 @@ namespace Project0
     {
         public static float AngleFromXZ(this Vector3 vector)
         {
-            return Vector3.Angle(vector, new Vector3(vector.x, 0f, vector.z));
+            return Vector3.Angle(vector, new Vector3(vector.x, 0f, vector.z)) * Mathf.Sign(vector.y);
+        }
+        public static Vector3 ToXZ(this Vector3 vector)
+        {
+            return new Vector3(vector.x, 0f, vector.z);
         }
     }
 }
