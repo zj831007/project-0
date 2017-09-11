@@ -9,10 +9,15 @@ namespace Project0.EditorExtensions
 {
     public class GameConfigMenu
     {
-        [MenuItem("Assets/Create/GameConfigAsset", false, 12)]
+        [MenuItem("Assets/Create/GameConfigAsset", true)]
+        private static bool ValidateCreateAsset()
+        {
+            return Menu.GetDirectories().Length > 0;
+        }
+        [MenuItem("Assets/Create/GameConfigAsset", false, 20)]
         private static void CreateAsset()
         {
-            var dirs = Array.ConvertAll(Selection.assetGUIDs, guid => AssetDatabase.GUIDToAssetPath(guid));
+            var dirs = Menu.GetDirectories();
             foreach (var dir in dirs)
             {
                 AssetDatabase.CreateAsset(new GameConfigAsset(), GetPath(dir));

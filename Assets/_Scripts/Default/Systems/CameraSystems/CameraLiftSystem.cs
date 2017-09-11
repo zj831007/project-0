@@ -15,20 +15,20 @@ namespace Project0
 {
     public class CameraLiftSystem : ReactiveSystem<InputEntity>
     {
-        Contexts _context;
+        GameContext _game;
 
         public CameraLiftSystem(Contexts context) : base(context.input)
         {
-            _context = context;
+            _game = context.game;
         }
 
         protected override void Execute(List<InputEntity> entities)
         {
             var tuple = entities[0];
-            var camera = _context.game.cameraEntity;
-            if (camera != null && camera.hasTransform)
+            var player = _game.playerEntity;
+            if (player != null && player.hasCameraTransform)
             {
-                camera.transform.value.Translate(tuple.direction.value * GameConfig.instance.cameraLiftSpeed * Time.deltaTime);
+                player.cameraTransform.value.Translate(tuple.direction.value * GameConfig.instance.cameraLiftSpeed * Time.deltaTime);
             }
         }
 

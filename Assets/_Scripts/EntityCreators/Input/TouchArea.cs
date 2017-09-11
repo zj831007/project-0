@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Project0.EntityCreators
 {
-    public abstract class TouchArea : InputEntityCreator, IPointerDownHandler, IPointerUpHandler
+    public class TouchArea : InputEntityCreator, IPointerDownHandler, IPointerUpHandler
     {
         bool moved;
 

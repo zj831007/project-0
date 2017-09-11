@@ -19,12 +19,11 @@ public static class InputComponentsLookup {
     public const int Name = 8;
     public const int Position = 9;
     public const int PreviousPosition = 10;
-    public const int ShouldRemoveID = 11;
-    public const int Step = 12;
-    public const int Touching = 13;
-    public const int Transform = 14;
+    public const int Step = 11;
+    public const int Touching = 12;
+    public const int Transform = 13;
 
-    public const int TotalComponents = 15;
+    public const int TotalComponents = 14;
 
     public static readonly string[] componentNames = {
         "Center",
@@ -38,7 +37,6 @@ public static class InputComponentsLookup {
         "Name",
         "Position",
         "PreviousPosition",
-        "ShouldRemoveID",
         "Step",
         "Touching",
         "Transform"
@@ -56,7 +54,6 @@ public static class InputComponentsLookup {
         typeof(Project0.NameComponent),
         typeof(Project0.Position),
         typeof(Project0.PreviousPosition),
-        typeof(Project0.ShouldRemoveID),
         typeof(Project0.StepComponent),
         typeof(Project0.TouchingComponent),
         typeof(Project0.TransformComponent)

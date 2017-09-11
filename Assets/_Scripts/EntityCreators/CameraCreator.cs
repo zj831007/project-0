@@ -13,20 +13,18 @@ using Object = UnityEngine.Object;
 
 namespace Project0.EntityCreators
 {
-    public class CameraCreator : MonoBehaviour, IGameEntityProvider
+    public class CameraCreator : GameEntityCreator
     {
-        public GameEntity gameEntity
-        {
-            get { return _entity; }
-        }
-
-        GameEntity _entity;
+        public Transform pivot;
 
         private void Awake()
         {
-            _entity = Contexts.sharedInstance.game.CreateEntity();
-            _entity.isCamera = true;
-            _entity.AddTransform(transform);
+            entity = Contexts.sharedInstance.game.CreateEntity();
+            entity.AddTransform(transform);
+            if (pivot)
+            {
+                entity.AddPivotTransform(pivot);
+            }
         }
     }
 }

@@ -175,11 +175,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Scripts\Editor\ConfigAnimationClipsMenu.cs" />
     <Compile Include="Assets\_Scripts\Editor\DictionaryAssetExtension.cs" />
     <Compile Include="Assets\_Scripts\Editor\ExitPlayModeOnScriptCompile.cs" />
     <Compile Include="Assets\_Scripts\Editor\FindMissingScriptsRecursively.cs" />
     <Compile Include="Assets\_Scripts\Editor\GameConfigInspector.cs" />
     <Compile Include="Assets\_Scripts\Editor\GameConfigMenu.cs" />
+    <Compile Include="Assets\_Scripts\Editor\Menu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_3rd\FXAA\Shaders\Fxaa3.shader" />

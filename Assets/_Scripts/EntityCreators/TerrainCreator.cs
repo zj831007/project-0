@@ -13,24 +13,18 @@ using Object = UnityEngine.Object;
 
 namespace Project0
 {
-    public class TerrainCreator : MonoBehaviour, IGameEntityProvider
+    public class TerrainCreator : GameEntityCreator
     {
-        public GameEntity gameEntity
-        {
-            get { return _entity; }
-        }
-
         public Vector3 normal;
-
-        GameEntity _entity;
 
         private void Awake()
         {
-            _entity = Contexts.sharedInstance.game.CreateEntity();
+            entity = Contexts.sharedInstance.game.CreateEntity();
+            entity.AddTransform(transform);
             if (normal != Vector3.zero)
             {
                 normal = normal.normalized;//(0.0, 0.9, 0.4)
-                _entity.AddNormal(normal);
+                entity.AddNormal(normal);
             }
         }
     }

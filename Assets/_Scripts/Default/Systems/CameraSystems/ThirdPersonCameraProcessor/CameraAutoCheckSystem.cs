@@ -17,13 +17,13 @@ namespace Project0
     {
         public static bool autoLock { get; private set; }
 
-        GameContext _game;
+        //GameContext _game;
         bool _canLock = true;
         float _time;
 
         public CameraAutoCheckSystem(Contexts contexts) : base(contexts.input)
         {
-            _game = contexts.game;
+            //_game = contexts.game;
         }
 
         protected override void Execute(List<InputEntity> entities)

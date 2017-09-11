@@ -15,25 +15,26 @@ namespace Project0
 {
     public class CameraWalkSystem : ReactiveSystem<InputEntity>
     {
-        Contexts _context;
+        GameContext _game;
 
         public CameraWalkSystem(Contexts context) : base(context.input)
         {
-            _context = context;
+            _game = context.game;
         }
 
         protected override void Execute(List<InputEntity> entities)
         {
             var joystick = entities[0];
-            var camera = _context.game.cameraEntity;
-            if (camera != null && camera.hasTransform)
+            var player = _game.playerEntity;
+            if (player != null && player.hasCameraTransform)
             {
+                var camTransform = player.cameraTransform.value;
                 var dir = joystick.direction.value;
                 dir.z = dir.y;
                 dir.y = 0f;
-                var angles = camera.transform.value.eulerAngles;
+                var angles = camTransform.eulerAngles;
                 var rotation = Quaternion.Euler(0f, angles.y, 0f);
-                camera.transform.value.position += (rotation * dir * GameConfig.instance.cameraWalkSpeed * Time.deltaTime);
+                camTransform.position += (rotation * dir * GameConfig.instance.cameraWalkSpeed * Time.deltaTime);
             }
         }
 

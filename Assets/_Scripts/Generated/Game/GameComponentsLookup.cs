@@ -9,59 +9,59 @@
 public static class GameComponentsLookup {
 
     public const int AngleOffset = 0;
-    public const int Camera = 1;
-    public const int Coroutine = 2;
-    public const int Destroyed = 3;
-    public const int Direction = 4;
-    public const int Distance = 5;
-    public const int Fighter = 6;
-    public const int ID = 7;
-    public const int MainFighter = 8;
+    public const int Animator = 1;
+    public const int CameraTransform = 2;
+    public const int Coroutine = 3;
+    public const int Destroyed = 4;
+    public const int Direction = 5;
+    public const int Distance = 6;
+    public const int Fighter = 7;
+    public const int ID = 8;
     public const int Name = 9;
     public const int Normal = 10;
-    public const int Pivot = 11;
-    public const int Position = 12;
-    public const int TerrainNormal = 13;
-    public const int Transform = 14;
-    public const int UseTerrainNormal = 15;
+    public const int PivotTransform = 11;
+    public const int Player = 12;
+    public const int Position = 13;
+    public const int Rigidbody = 14;
+    public const int Transform = 15;
 
     public const int TotalComponents = 16;
 
     public static readonly string[] componentNames = {
         "AngleOffset",
-        "Camera",
+        "Animator",
+        "CameraTransform",
         "Coroutine",
         "Destroyed",
         "Direction",
         "Distance",
         "Fighter",
         "ID",
-        "MainFighter",
         "Name",
         "Normal",
-        "Pivot",
+        "PivotTransform",
+        "Player",
         "Position",
-        "TerrainNormal",
-        "Transform",
-        "UseTerrainNormal"
+        "Rigidbody",
+        "Transform"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(Project0.AngleOffset),
-        typeof(Project0.CameraComponent),
+        typeof(Project0.AnimatorComponent),
+        typeof(Project0.CameraTransformComponent),
         typeof(Project0.CoroutineComponent),
         typeof(Project0.DestroyedComponent),
         typeof(Project0.DirectionComponent),
         typeof(Project0.DistanceComponent),
         typeof(Project0.FighterComponent),
         typeof(Project0.IDComponent),
-        typeof(Project0.MainFighterComponent),
         typeof(Project0.NameComponent),
         typeof(Project0.NormalComponent),
-        typeof(Project0.PivotComponent),
+        typeof(Project0.PivotTransformComponent),
+        typeof(Project0.PlayerComponent),
         typeof(Project0.Position),
-        typeof(Project0.TerrainNormal),
-        typeof(Project0.TransformComponent),
-        typeof(Project0.UseTerrainNormal)
+        typeof(Project0.RigidbodyComponent),
+        typeof(Project0.TransformComponent)
     };
 }

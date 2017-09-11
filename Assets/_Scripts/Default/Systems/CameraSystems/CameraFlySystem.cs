@@ -15,23 +15,23 @@ namespace Project0
 {
     public class CameraFlySystem : ReactiveSystem<InputEntity>
     {
-        Contexts _context;
+        GameContext _game;
 
         public CameraFlySystem(Contexts context) : base(context.input)
         {
-            _context = context;
+            _game = context.game;
         }
 
         protected override void Execute(List<InputEntity> entities)
         {
             var joystick = entities[0];
-            var camera = _context.game.cameraEntity;
-            if (camera != null && camera.hasTransform)
+            var player = _game.playerEntity;
+            if (player != null && player.hasCameraTransform)
             {
                 var dir = joystick.direction.value;
                 dir.z = dir.y;
                 dir.y = 0f;
-                camera.transform.value.Translate(dir * GameConfig.instance.cameraFlySpeed * Time.deltaTime);
+                player.cameraTransform.value.Translate(dir * GameConfig.instance.cameraFlySpeed * Time.deltaTime);
             }
         }
 

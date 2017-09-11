@@ -139,14 +139,19 @@ namespace Project0
             get { return _asset.cameraAutoSpeed / 50f; }
         }
 
-        public LayerMask fighterTerrainMask
+        public LayerMask playerTerrainMask
         {
-            get { return _asset.fighterTerrainMask; }
+            get { return _asset.playerTerrainMask; }
         }
 
-        public float fighterWalkSpeed
+        public LayerMask playerMask
         {
-            get { return _asset.fighterWalkSpeed / 20f; }
+            get { return _asset.playerMask; }
+        }
+
+        public float playerRunSpeed
+        {
+            get { return _asset.playerRunSpeed / 10f; }
         }
     }
 }

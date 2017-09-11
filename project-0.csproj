@@ -100,10 +100,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraTerrainSystem.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameCameraComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameMainFighterComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePlayerComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameAngleOffsetComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameAnimatorComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameCameraTransformComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputCenterComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameCoroutineComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputCoroutineComponent.cs" />
@@ -118,16 +118,14 @@
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputHorizontalComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameIDComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputIDComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputShouldRemoveIDComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameTerrainNormalComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameUseTerrainNormalComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameNameComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputNameComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameNormalComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePivotComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePivotTransformComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePositionComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputPositionComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputPreviousPositionComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameRigidbodyComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputStepComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Input\Components\InputTouchingComponent.cs" />
     <Compile Include="Assets\_Scripts\Generated\Game\Components\GameTransformComponent.cs" />
@@ -154,21 +152,13 @@
     <Compile Include="Assets\_Scripts\Generated\Feature.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\_Scripts\Default\Components\AngleOffset.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\AnimatorComponent.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\_Scripts\Default\Components\NormalComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\RigidbodyComponent.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\_Scripts\Default\Components\legacy\TerrainNormal.cs" />
-    <Compile Include="Assets\_Scripts\Default\Extensions\TransformExtension.cs" />
-    <Compile Include="Assets\_Scripts\Default\Extensions\Vector3Extension.cs" />
-    <Compile Include="Assets\_Scripts\Default\IEntityProvider.cs" />
-    <Compile Include="Assets\_Scripts\Default\NormalDetector.cs" />
-    <Compile Include="Assets\_Scripts\EntityCreators\TerrainCreator.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Assets\_Scripts\Default\Components\legacy\UseTerrainNormal.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\CameraEntityComponent.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_3rd\Entitas\Compile.cs" />
@@ -176,37 +166,33 @@
     <Compile Include="Assets\_3rd\FXAA\Scripts\FXAAPostEffectsBase.cs" />
     <Compile Include="Assets\_Scripts\Default\Assets\DictionaryAsset.cs" />
     <Compile Include="Assets\_Scripts\Default\Assets\GameConfigAsset.cs" />
-    <Compile Include="Assets\_Scripts\Default\Components\CameraComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\AngleOffset.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\CenterComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\CoroutineComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\DestroyedComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\DirectionComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\DistanceComponent.cs" />
-    <Compile Include="Assets\_Scripts\Default\Components\FighterComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\legacy\FighterComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\HatComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\HorizontalComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\IDComponent.cs" />
-    <Compile Include="Assets\_Scripts\Default\Components\legacy\ShouldRemoveID.cs" />
-    <Compile Include="Assets\_Scripts\Default\Components\MainFighterComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\NameComponent.cs" />
-    <Compile Include="Assets\_Scripts\Default\Components\PivotComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\NormalComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\PivotTransformComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\PlayerComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\Position.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\PreviousPosition.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\StepComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\TouchingComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\TransformComponent.cs" />
-    <Compile Include="Assets\_Scripts\Default\Controllers\Controller.cs" />
-    <Compile Include="Assets\_Scripts\Default\Controllers\TestController.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\PreventCameraBlockSystem.cs" />
-    <Compile Include="Assets\_Scripts\EntityCreators\CameraCreator.cs" />
-    <Compile Include="Assets\_Scripts\EntityCreators\FighterCreator.cs" />
-    <Compile Include="Assets\_Scripts\EntityCreators\Input\InputEntityCreator.cs" />
-    <Compile Include="Assets\_Scripts\EntityCreators\Input\Joystick.cs" />
-    <Compile Include="Assets\_Scripts\EntityCreators\Input\Pad.cs" />
-    <Compile Include="Assets\_Scripts\EntityCreators\Input\TouchArea.cs" />
-    <Compile Include="Assets\_Scripts\EntityCreators\Input\TupleButton.cs" />
+    <Compile Include="Assets\_Scripts\Default\Controllers\ProcessorManager.cs" />
+    <Compile Include="Assets\_Scripts\Default\Controllers\TestManager.cs" />
+    <Compile Include="Assets\_Scripts\Default\Extensions\TransformExtension.cs" />
+    <Compile Include="Assets\_Scripts\Default\Extensions\Vector3Extension.cs" />
     <Compile Include="Assets\_Scripts\Default\GameConfig.cs" />
+    <Compile Include="Assets\_Scripts\Default\IEntityProvider.cs" />
     <Compile Include="Assets\_Scripts\Default\MakeGameObjectsActive.cs" />
+    <Compile Include="Assets\_Scripts\Default\NormalDetector.cs" />
     <Compile Include="Assets\_Scripts\Default\Processor.cs" />
     <Compile Include="Assets\_Scripts\Default\StringExtension.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\CameraFlySystem.cs" />
@@ -215,15 +201,17 @@
     <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\CameraWalkSystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraAutoCheckSystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraAutoLockSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraLookCameraPivotSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraLookPivotSystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraOrbitAroundCameraPivotSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraPivotFollowMainFigherSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraTrailCameraPivotSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\PivotFollowMainFigherSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraTerrainSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraTrailPivotSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\PreventCameraBlockSystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\ThirdPersonCameraProcessor.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\CoroutineSystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\DestroyEntitySystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\DestroyTransformSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\FighterSystems\MainFighterWalkSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\PlayerSystems\PlayerRunSystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\InitInputSystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\InputSystems\JoystickSystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\InputSystems\PadSystem.cs" />
@@ -232,6 +220,15 @@
     <Compile Include="Assets\_Scripts\Default\UnityConsole.cs" />
     <Compile Include="Assets\_Scripts\Design\SceneSingleton.cs" />
     <Compile Include="Assets\_Scripts\Design\Singleton.cs" />
+    <Compile Include="Assets\_Scripts\EntityCreators\CameraCreator.cs" />
+    <Compile Include="Assets\_Scripts\EntityCreators\GameEntityCreator.cs" />
+    <Compile Include="Assets\_Scripts\EntityCreators\Input\InputEntityCreator.cs" />
+    <Compile Include="Assets\_Scripts\EntityCreators\Input\Joystick.cs" />
+    <Compile Include="Assets\_Scripts\EntityCreators\Input\Pad.cs" />
+    <Compile Include="Assets\_Scripts\EntityCreators\Input\TouchArea.cs" />
+    <Compile Include="Assets\_Scripts\EntityCreators\Input\TupleButton.cs" />
+    <Compile Include="Assets\_Scripts\EntityCreators\PlayerCreator.cs" />
+    <Compile Include="Assets\_Scripts\EntityCreators\TerrainCreator.cs" />
     <Compile Include="Assets\_Scripts\Mis\Mis.cs" />
     <Compile Include="Assets\_Scripts\Mis\Operations.cs" />
     <Compile Include="Assets\_Scripts\Mis\Test.cs" />

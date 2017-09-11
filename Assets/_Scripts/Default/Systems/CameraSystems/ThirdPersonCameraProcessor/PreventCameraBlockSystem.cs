@@ -26,37 +26,31 @@ namespace Project0
 
         public void Execute()
         {
-            var camera = _game.cameraEntity;
-            if (camera != null && camera.hasPivot && camera.hasDistance && camera.hasDirection)
+            var player = _game.playerEntity;
+            var camera = ThirdPersonCameraProcessor.camera;
+            var pivotTransform = camera.pivotTransform.value;
+            var camTransform = camera.transform.value;
+            RaycastHit hit;
+            var mask = GameConfig.instance.cameraBlockMask & ~GameConfig.instance.playerMask;
+            var dir = camera.direction.value;
+            float newDis;
+            if (Physics.Raycast(pivotTransform.position, dir, out hit, camera.distance.value, mask))
             {
-                var pivot = camera.pivot.value;
-                if (pivot.hasTransform)
+                newDis = Mathf.Max(Mathf.SmoothDamp(camera.distance.value, GameConfig.instance.cameraMinDistance, ref _nearVel, 0.2f), Vector3.Distance(pivotTransform.position, hit.point));
+            }
+            else
+            {
+                if (Physics.Raycast(pivotTransform.position, dir, out hit, GameConfig.instance.cameraMaxDistance, mask))
                 {
-                    var pivotTransform = pivot.transform.value;
-                    var camTransform = camera.transform.value;
-                    RaycastHit hit;
-                    var mask = GameConfig.instance.cameraBlockMask;
-                    var dir = camera.direction.value;
-                    float newDis;
-                    if (Physics.Raycast(pivotTransform.position, dir, out hit, camera.distance.value, mask))
-                    {
-                        newDis = Mathf.Max(Mathf.SmoothDamp(camera.distance.value, GameConfig.instance.cameraMinDistance, ref _nearVel, 0.2f), Vector3.Distance(pivotTransform.position, hit.point));
-                    }
-                    else
-                    {
-                        if (Physics.Raycast(pivotTransform.position, dir, out hit, GameConfig.instance.cameraMaxDistance, mask))
-                        {
-                            newDis = Vector3.Distance(pivotTransform.position, hit.point);
-                        }
-                        else
-                        {
-                            newDis = Mathf.SmoothDamp(camera.distance.value, GameConfig.instance.cameraMaxDistance, ref _awayVel, 0.2f);
-                        }
-                    }
-                    camTransform.position = pivotTransform.position + camera.direction.value * newDis;
-                    camera.ReplaceDistance(newDis);
+                    newDis = Vector3.Distance(pivotTransform.position, hit.point);
+                }
+                else
+                {
+                    newDis = Mathf.SmoothDamp(camera.distance.value, GameConfig.instance.cameraMaxDistance, ref _awayVel, 0.2f);
                 }
             }
+            camTransform.position = pivotTransform.position + camera.direction.value * newDis;
+            camera.ReplaceDistance(newDis);
         }
     }
 }

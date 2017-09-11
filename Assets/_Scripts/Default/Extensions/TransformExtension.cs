@@ -17,7 +17,7 @@ namespace Project0
     {
         public static GameEntity getGameEntity(this Transform transform)
         {
-            return transform.GetComponent<IGameEntityProvider>().gameEntity;
+            return transform.GetComponent<IGameEntityProvider>()?.gameEntity;
         }
     }
 }

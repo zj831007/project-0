@@ -26,17 +26,17 @@ namespace Project0
         protected override void Execute(List<InputEntity> entities)
         {
             var pad = entities[0];
-            var camera = _game.cameraEntity;
-            if (camera != null && camera.hasTransform)
+            var player = _game.playerEntity;
+            if (player != null && player.hasCameraTransform)
             {
-                var previous = camera.transform.value.eulerAngles;
+                var camTransform = player.cameraTransform.value;
+                var previous = camTransform.eulerAngles;
                 var dir = pad.direction.value;
                 if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
                 {
                     dir.y = 0f;
                 }
                 var rotation = previous + new Vector3(-dir.y * GameConfig.instance.rightPadY, dir.x * GameConfig.instance.rightPadX, 0f);
-                var camTransform = camera.transform.value;
                 camTransform.eulerAngles = Vector3.SmoothDamp(previous, rotation, ref _vel, 0.2f);
                 var angles = camTransform.eulerAngles;
                 var angleX = angles.x > 90 ? angles.x - 360 : angles.x;

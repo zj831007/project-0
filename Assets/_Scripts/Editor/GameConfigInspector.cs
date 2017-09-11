@@ -34,59 +34,63 @@ namespace Project0.EditorExtensions
                 var asset = (GameConfigAsset)assetProp.objectReferenceValue;
                 DictionaryAssetExtension.serializedAsset = new SerializedObject(asset);
                 bool isGod;
-                if (asset.BoolPropertyField("isGod", out isGod))
+                if (asset.BoolPropertyField(nameof(_config.isGod), out isGod))
                 {
                     if (Application.isPlaying)
                     {
                         if (isGod)
                         {
                             Controller.processor
-                                .DeactivateExecuteSystem("MainFighterWalkSystem")
-                                .DeactivateExecuteSystem("ThirdPersonCameraProcessor");
+                                .DeactivateExecuteSystem(nameof(ThirdPersonCameraProcessor))
+                                /*.DeactivateExecuteSystem(nameof(ThirdPersonCameraProcessor))*/;
+                            Controller.fixedProcessor
+                                .DeactivateExecuteSystem(nameof(PlayerRunSystem));
                             Controller.processor
-                                .ActivateExecuteSystem("CameraFlySystem")
-                                .ActivateExecuteSystem("CameraWalkSystem")
-                                .ActivateExecuteSystem("CameraLiftSystem")
-                                .ActivateExecuteSystem("CameraFreeRotationSystem");
+                                .ActivateExecuteSystem(nameof(CameraFlySystem))
+                                .ActivateExecuteSystem(nameof(CameraWalkSystem))
+                                .ActivateExecuteSystem(nameof(CameraLiftSystem))
+                                .ActivateExecuteSystem(nameof(CameraFreeRotationSystem));
                         }
                         else
                         {
                             Controller.processor
-                                .DeactivateExecuteSystem("CameraFlySystem")
-                                .DeactivateExecuteSystem("CameraWalkSystem")
-                                .DeactivateExecuteSystem("CameraLiftSystem")
-                                .DeactivateExecuteSystem("CameraFreeRotationSystem");
+                                .DeactivateExecuteSystem(nameof(CameraFlySystem))
+                                .DeactivateExecuteSystem(nameof(CameraWalkSystem))
+                                .DeactivateExecuteSystem(nameof(CameraLiftSystem))
+                                .DeactivateExecuteSystem(nameof(CameraFreeRotationSystem));
                             Controller.processor
-                                .ActivateExecuteSystem("MainFighterWalkSystem")
-                                .ActivateExecuteSystem("ThirdPersonCameraProcessor");
+                                //.ActivateExecuteSystem(nameof(PlayerRunSystem))
+                                .ActivateExecuteSystem(nameof(ThirdPersonCameraProcessor));
+                            Controller.fixedProcessor
+                                .ActivateExecuteSystem(nameof(PlayerRunSystem));
                         }
                     }
                 }
                 if (_showInputConfig = EditorGUILayout.Foldout(_showInputConfig, "Input"))
                 {
                     EditorGUI.indentLevel++;
-                    if (asset.BoolPropertyField("leftJoystick"))
+                    if (asset.BoolPropertyField(nameof(_config.leftJoystick)))
                     {
                         ActivateInitInputSystem();
                     }
-                    if (asset.BoolPropertyField("rightJoystick"))
+                    if (asset.BoolPropertyField(nameof(_config.rightJoystick)))
                     {
                         ActivateInitInputSystem();
                     }
-                    if (asset.BoolPropertyField("leftTupleButton"))
+                    if (asset.BoolPropertyField(nameof(_config.leftTupleButton)))
                     {
                         ActivateInitInputSystem();
                     }
                     bool rightPad;
-                    if (asset.BoolPropertyField("rightPad", out rightPad))
+                    if (asset.BoolPropertyField(nameof(_config.rightPad), out rightPad))
                     {
                         ActivateInitInputSystem();
                     }
                     if (rightPad)
                     {
                         EditorGUI.indentLevel++;
-                        asset.FloatPropertyField("rightPadX");
-                        asset.FloatPropertyField("rightPadY");
+                        asset.FloatPropertyField(nameof(_config.rightPadX));
+                        asset.FloatPropertyField(nameof(_config.rightPadY));
                         EditorGUI.indentLevel--;
                     }
                     EditorGUI.indentLevel--;
@@ -94,32 +98,32 @@ namespace Project0.EditorExtensions
                 if (_showCameraConfig = EditorGUILayout.Foldout(_showCameraConfig, "Camera"))
                 {
                     EditorGUI.indentLevel++;
-                    asset.ObjectPropertyField("cameraBlockMask", "Block Mask");
-                    asset.FloatPropertyField("cameraMaxDistance", "Max Distance");
-                    asset.FloatPropertyField("cameraMinDistance", "Min Distance");
-                    asset.FloatPropertyField("cameraHeight", "Height");
-                    asset.FloatPropertyField("cameraFlySpeed", "Fly Speed");
-                    asset.FloatPropertyField("cameraWalkSpeed", "Walk Speed");
-                    asset.FloatPropertyField("cameraLiftSpeed", "Lift Speed");
-                    asset.FloatPropertyField("cameraUpDegree", "Up Degree");
-                    asset.FloatPropertyField("cameraDownDegree", "Down Degree");
+                    asset.ObjectPropertyField(nameof(_config.cameraBlockMask), "Block Mask");
+                    asset.FloatPropertyField(nameof(_config.cameraMaxDistance), "Max Distance");
+                    asset.FloatPropertyField(nameof(_config.cameraMinDistance), "Min Distance");
+                    asset.FloatPropertyField(nameof(_config.cameraHeight), "Height");
+                    asset.FloatPropertyField(nameof(_config.cameraFlySpeed), "Fly Speed");
+                    asset.FloatPropertyField(nameof(_config.cameraWalkSpeed), "Walk Speed");
+                    asset.FloatPropertyField(nameof(_config.cameraLiftSpeed), "Lift Speed");
+                    asset.FloatPropertyField(nameof(_config.cameraUpDegree), "Up Degree");
+                    asset.FloatPropertyField(nameof(_config.cameraDownDegree), "Down Degree");
                     bool autolock;
-                    if (asset.BoolPropertyField("cameraAutoLock", out autolock, "Auto Lock"))
+                    if (asset.BoolPropertyField(nameof(_config.cameraAutoLock), out autolock, "Auto Lock"))
                     {
                         if (Application.isPlaying)
                         {
-                            var processor = Controller.processor["ThirdPersonCameraProcessor"];
+                            var processor = Controller.processor[nameof(ThirdPersonCameraProcessor)];
                             if (autolock)
                             {
                                 processor
-                                    .ActivateExecuteSystem("CameraAutoCheckSystem")
-                                    .ActivateExecuteSystem("CameraAutoLockSystem");
+                                    .ActivateExecuteSystem(nameof(CameraAutoCheckSystem))
+                                    .ActivateExecuteSystem(nameof(CameraAutoLockSystem));
                             }
                             else
                             {
                                 processor
-                                    .DeactivateExecuteSystem("CameraAutoCheckSystem")
-                                    .DeactivateExecuteSystem("CameraAutoLockSystem");
+                                    .DeactivateExecuteSystem(nameof(CameraAutoCheckSystem))
+                                    .DeactivateExecuteSystem(nameof(CameraAutoLockSystem));
                             }
                         }
                     }
@@ -127,24 +131,25 @@ namespace Project0.EditorExtensions
                     {
                         EditorGUI.indentLevel++;
                         bool fast;
-                        asset.BoolPropertyField("cameraFastLock", out fast, "Fast");
+                        asset.BoolPropertyField(nameof(_config.cameraFastLock), out fast, "Fast");
                         if (fast == false)
                         {
                             EditorGUI.indentLevel++;
-                            asset.FloatPropertyField("cameraAutoTime", "Time");
+                            asset.FloatPropertyField(nameof(_config.cameraAutoTime), "Time");
                             EditorGUI.indentLevel--;
                         }
-                        asset.FloatPropertyField("cameraAutoDegree", "Degree");
-                        asset.FloatPropertyField("cameraAutoSpeed", "Speed");
+                        asset.FloatPropertyField(nameof(_config.cameraAutoDegree), "Degree");
+                        asset.FloatPropertyField(nameof(_config.cameraAutoSpeed), "Speed");
                         EditorGUI.indentLevel--;
                     }
                     EditorGUI.indentLevel--;
                 }
-                if (_showInputConfig = EditorGUILayout.Foldout(_showInputConfig, "Fighter"))
+                if (_showInputConfig = EditorGUILayout.Foldout(_showInputConfig, "Player"))
                 {
                     EditorGUI.indentLevel++;
-                    asset.ObjectPropertyField("fighterTerrainMask", "Terrain Mask");
-                    asset.FloatPropertyField("fighterWalkSpeed", "Walk Speed");
+                    asset.ObjectPropertyField(nameof(_config.playerMask), "Mask");
+                    asset.ObjectPropertyField(nameof(_config.playerTerrainMask), "Terrain Mask");
+                    asset.FloatPropertyField(nameof(_config.playerRunSpeed), "Run Speed");
                     EditorGUI.indentLevel--;
                 }
                 EditorUtility.SetDirty(asset);
@@ -156,7 +161,7 @@ namespace Project0.EditorExtensions
             if (Application.isPlaying)
             {
                 Controller.processor
-                            .ExecuteInitializeSystem("InitInputSystem");
+                            .ExecuteInitializeSystem(nameof(InitInputSystem));
             }
         }
 

@@ -49,8 +49,9 @@ namespace Project0
         public float cameraAutoDegree = 15f;
         [Range(0f, 100f)]
         public float cameraAutoSpeed = 50f;
-        public LayerMask fighterTerrainMask;
+        public LayerMask playerMask;
+        public LayerMask playerTerrainMask;
         [Range(0f, 100f)]
-        public float fighterWalkSpeed = 50f;
+        public float playerRunSpeed = 50f;
     }
 }
