@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Project0
 {
-    [Game, Input]
-    public class DirectionComponent : IComponent
+    [Game]
+    public class DirectionComponent : SerializableComponent, IComponent
     {
         public Vector3 value;
         public override string ToString()

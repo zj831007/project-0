@@ -14,7 +14,7 @@ using Object = UnityEngine.Object;
 namespace Project0
 {
     [Game]
-    public class NormalComponent : IComponent
+    public class NormalComponent : SerializableComponent, IComponent
     {
         public Vector3 value;
         public override string ToString()

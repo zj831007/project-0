@@ -8,19 +8,19 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Project0.AngleOffset angleOffset { get { return (Project0.AngleOffset)GetComponent(GameComponentsLookup.AngleOffset); } }
+    public Project0.AngleOffsetComponent angleOffset { get { return (Project0.AngleOffsetComponent)GetComponent(GameComponentsLookup.AngleOffset); } }
     public bool hasAngleOffset { get { return HasComponent(GameComponentsLookup.AngleOffset); } }
 
     public void AddAngleOffset(float newValue) {
         var index = GameComponentsLookup.AngleOffset;
-        var component = CreateComponent<Project0.AngleOffset>(index);
+        var component = CreateComponent<Project0.AngleOffsetComponent>(index);
         component.value = newValue;
         AddComponent(index, component);
     }
 
     public void ReplaceAngleOffset(float newValue) {
         var index = GameComponentsLookup.AngleOffset;
-        var component = CreateComponent<Project0.AngleOffset>(index);
+        var component = CreateComponent<Project0.AngleOffsetComponent>(index);
         component.value = newValue;
         ReplaceComponent(index, component);
     }

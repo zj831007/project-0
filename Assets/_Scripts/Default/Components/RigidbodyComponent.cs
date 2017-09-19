@@ -14,8 +14,12 @@ using Object = UnityEngine.Object;
 namespace Project0
 {
     [Game]
-    public class RigidbodyComponent : IComponent
+    public class RigidbodyComponent : SerializableComponent, IComponent
     {
         public Rigidbody value;
+        public override string ToString()
+        {
+            return "";
+        }
     }
 }

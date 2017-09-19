@@ -13,7 +13,7 @@ using Object = UnityEngine.Object;
 
 namespace Project0
 {
-    [Game, Input]
+    [Game]
     public class DestroyedComponent : IComponent
     {
         public override string ToString()

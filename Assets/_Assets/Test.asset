@@ -11,33 +11,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119dd84209290194c94c75c7d6125e4a, type: 3}
   m_Name: Test
   m_EditorClassIdentifier: 
-  isGod: 1
-  leftJoystick: 1
-  rightJoystick: 1
-  leftTupleButton: 1
-  rightPad: 1
-  rightPadX: 51.7
-  rightPadY: 21.4
-  cameraBlockMask:
-    serializedVersion: 2
-    m_Bits: 256
-  cameraMaxDistance: 5
-  cameraMinDistance: 1.1
-  cameraHeight: 1.5
-  cameraFlySpeed: 50
-  cameraWalkSpeed: 50
-  cameraLiftSpeed: 50
-  cameraUpDegree: 45
-  cameraDownDegree: -45
-  cameraAutoLock: 1
-  cameraFastLock: 1
-  cameraAutoTime: 0.5
-  cameraAutoDegree: 15
-  cameraAutoSpeed: 50
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 512
-  playerTerrainMask:
-    serializedVersion: 2
-    m_Bits: 256
-  playerRunSpeed: 83.6
+  input:
+    mode: 1
+    rightPadX: 52.6
+    rightPadY: 50
+  camera:
+    blockMask:
+      serializedVersion: 2
+      m_Bits: 512
+    maxDistance: 5
+    minDistance: 2
+    height: 1.5
+    flySpeed: 50
+    walkSpeed: 50
+    liftSpeed: 50
+    upDegree: 75
+    downDegree: -75
+    autoLock: 1
+    fastLock: 1
+    autoTime: 0.5
+    autoDegree: 15
+    autoSpeed: 50
+  pawn:
+    mask:
+      serializedVersion: 2
+      m_Bits: 256
+    terrainMask:
+      serializedVersion: 2
+      m_Bits: 512
+    runSpeed: 21.5

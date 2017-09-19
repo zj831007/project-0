@@ -12,15 +12,12 @@
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
-    <UnityVersion>2017.1.0f3</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <UnityVersion>2017.1.1f1</UnityVersion>
+    <RootNamespace></RootNamespace>
     <LangVersion>6</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -30,7 +27,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_0;UNITY_2017_1;UNITY_2017;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_1;UNITY_2017_1;UNITY_2017;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_HAS_GOOGLEVR</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -40,7 +37,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_0;UNITY_2017_1;UNITY_2017;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_1;UNITY_2017_1;UNITY_2017;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_HAS_GOOGLEVR</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
@@ -100,138 +97,150 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePlayerComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameAngleOffsetComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameAnimatorComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameCameraTransformComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputCenterComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameCoroutineComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputCoroutineComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameDestroyedComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputDestroyedComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameDirectionComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputDirectionComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameDistanceComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputDistanceComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameFighterComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputHatComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputHorizontalComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameIDComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputIDComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameNameComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputNameComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameNormalComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePivotTransformComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePositionComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputPositionComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputPreviousPositionComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameRigidbodyComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputStepComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputTouchingComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameTransformComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\Components\InputTransformComponent.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Components\Interfaces\ICoroutine.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Components\Interfaces\IDestroyed.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Components\Interfaces\IDirection.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Components\Interfaces\IDistance.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Components\Interfaces\IID.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Components\Interfaces\IName.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Components\Interfaces\IPosition.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Components\Interfaces\ITransform.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\GameComponentsLookup.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\InputComponentsLookup.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\GameAttribute.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\InputAttribute.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\GameContext.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\InputContext.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\GameMatcher.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\InputMatcher.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Contexts.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Game\GameEntity.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Input\InputEntity.cs" />
-    <Compile Include="Assets\_Scripts\Generated\Feature.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Assets\_Scripts\Default\Components\AnimatorComponent.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Assets\_Scripts\Default\Components\RigidbodyComponent.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Assets\_Scripts\Default\Components\CameraEntityComponent.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Assets\_3rd\Entitas\Compile.cs" />
     <Compile Include="Assets\_3rd\FXAA\Scripts\FXAA.cs" />
     <Compile Include="Assets\_3rd\FXAA\Scripts\FXAAPostEffectsBase.cs" />
     <Compile Include="Assets\_Scripts\Default\Assets\DictionaryAsset.cs" />
     <Compile Include="Assets\_Scripts\Default\Assets\GameConfigAsset.cs" />
-    <Compile Include="Assets\_Scripts\Default\Components\AngleOffset.cs" />
+    <Compile Include="Assets\_Scripts\Default\Attributes\ConfigPropertyName.cs" />
+    <Compile Include="Assets\_Scripts\Default\Attributes\NestedConfigAttribute.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\AngleOffsetComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\AnimatorComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\CameraComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\CameraCreatorComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\CenterComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\CoroutineComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\DestroyedComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\DirectionComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\DistanceComponent.cs" />
-    <Compile Include="Assets\_Scripts\Default\Components\legacy\FighterComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\HatComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\HatCreatorComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\HorizontalComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\HorizontalVelocityComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\IDComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\InactiveComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\InputTypeComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\JoystickComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\LerpLocalPositionComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\LerpPostionComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\LerpRotationComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\LocalPosition.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\NameComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\NormalComponent.cs" />
-    <Compile Include="Assets\_Scripts\Default\Components\PivotTransformComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\PadComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\PawnComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\PawnCreatorComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\PivotComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\PivotCreatorComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\PlayerComponent.cs" />
-    <Compile Include="Assets\_Scripts\Default\Components\Position.cs" />
-    <Compile Include="Assets\_Scripts\Default\Components\PreviousPosition.cs" />
-    <Compile Include="Assets\_Scripts\Default\Components\StepComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\PositionComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\PreviousTouchPositionComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\RigidbodyComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\RotationComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\SerializableComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\TargetCreatorComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\TouchingComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\TouchPositionComponent.cs" />
     <Compile Include="Assets\_Scripts\Default\Components\TransformComponent.cs" />
-    <Compile Include="Assets\_Scripts\Default\Controllers\ProcessorManager.cs" />
-    <Compile Include="Assets\_Scripts\Default\Controllers\TestManager.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\TupleButtonComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\VelocityComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\Components\VerticalVelocityComponent.cs" />
+    <Compile Include="Assets\_Scripts\Default\EntityCreator.cs" />
+    <Compile Include="Assets\_Scripts\Default\Enums\InputMode.cs" />
+    <Compile Include="Assets\_Scripts\Default\Enums\InputType.cs" />
+    <Compile Include="Assets\_Scripts\Default\Extensions\GameEntityExtension.cs" />
+    <Compile Include="Assets\_Scripts\Default\Extensions\QuaternionExtension.cs" />
+    <Compile Include="Assets\_Scripts\Default\Extensions\StringExtension.cs" />
     <Compile Include="Assets\_Scripts\Default\Extensions\TransformExtension.cs" />
     <Compile Include="Assets\_Scripts\Default\Extensions\Vector3Extension.cs" />
     <Compile Include="Assets\_Scripts\Default\GameConfig.cs" />
-    <Compile Include="Assets\_Scripts\Default\IEntityProvider.cs" />
-    <Compile Include="Assets\_Scripts\Default\MakeGameObjectsActive.cs" />
+    <Compile Include="Assets\_Scripts\Default\InputLayout.cs" />
+    <Compile Include="Assets\_Scripts\Default\KeyboardInput.cs" />
+    <Compile Include="Assets\_Scripts\Default\Managers\ProcessorManager.cs" />
+    <Compile Include="Assets\_Scripts\Default\Managers\TestManager.cs" />
     <Compile Include="Assets\_Scripts\Default\NormalDetector.cs" />
     <Compile Include="Assets\_Scripts\Default\Processor.cs" />
-    <Compile Include="Assets\_Scripts\Default\StringExtension.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\CameraFlySystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\CameraFreeRotationSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\CameraLiftSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\CameraWalkSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraAutoCheckSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraAutoLockSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraLookPivotSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraOrbitAroundCameraPivotSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\PivotFollowMainFigherSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraTerrainSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\CameraTrailPivotSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\PreventCameraBlockSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\CameraSystems\ThirdPersonCameraProcessor\ThirdPersonCameraProcessor.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\Camera\CameraFlySystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\Camera\CameraFreeRotationSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\Camera\CameraLiftSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\Camera\CameraWalkSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\Camera\ThirdPerson\CameraAutoCheckSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\Camera\ThirdPerson\CameraAutoLockSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\Camera\ThirdPerson\CameraLookPivotSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\Camera\ThirdPerson\CameraOrbitAroundCameraPivotSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\Camera\ThirdPerson\CameraTerrainSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\Camera\ThirdPerson\CameraTrailPivotSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\Camera\ThirdPerson\PivotFollowTargetSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\Camera\ThirdPerson\PreventCameraBlockSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\Camera\ThirdPerson\ThirdPersonCameraProcessor.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\CoroutineSystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\DestroyEntitySystem.cs" />
     <Compile Include="Assets\_Scripts\Default\Systems\DestroyTransformSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\PlayerSystems\PlayerRunSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\InitInputSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\InputSystems\JoystickSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\InputSystems\PadSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\InputSystems\TouchPositionSystem.cs" />
-    <Compile Include="Assets\_Scripts\Default\Systems\InputSystems\TupleButtonSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\GameInitSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\InactiveSyshtem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\InitDependenciesSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\Input\JoystickSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\Input\PadSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\Input\TouchPositionSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\Input\TupleButtonSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\LerpViewSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\Pawn\PawnRunSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\Systems\ViewSystem.cs" />
+    <Compile Include="Assets\_Scripts\Default\TouchArea.cs" />
     <Compile Include="Assets\_Scripts\Default\UnityConsole.cs" />
     <Compile Include="Assets\_Scripts\Design\SceneSingleton.cs" />
     <Compile Include="Assets\_Scripts\Design\Singleton.cs" />
-    <Compile Include="Assets\_Scripts\EntityCreators\CameraCreator.cs" />
-    <Compile Include="Assets\_Scripts\EntityCreators\GameEntityCreator.cs" />
-    <Compile Include="Assets\_Scripts\EntityCreators\Input\InputEntityCreator.cs" />
-    <Compile Include="Assets\_Scripts\EntityCreators\Input\Joystick.cs" />
-    <Compile Include="Assets\_Scripts\EntityCreators\Input\Pad.cs" />
-    <Compile Include="Assets\_Scripts\EntityCreators\Input\TouchArea.cs" />
-    <Compile Include="Assets\_Scripts\EntityCreators\Input\TupleButton.cs" />
-    <Compile Include="Assets\_Scripts\EntityCreators\PlayerCreator.cs" />
-    <Compile Include="Assets\_Scripts\EntityCreators\TerrainCreator.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Contexts.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Feature.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameAngleOffsetComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameAnimatorComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameCameraComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameCameraCreatorComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameCenterComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameCoroutineComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameDestroyedComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameDirectionComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameDistanceComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameHatComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameHatCreatorComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameHorizontalComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameHorizontalVelocityComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameIDComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameInactiveComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameInputTypeComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameJoystickComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameLerpLocalPositionComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameLerpPostionComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameLerpRotationComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameLocalPositionComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameNameComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameNormalComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePadComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePawnComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePawnCreatorComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePivotComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePivotCreatorComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePlayerComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePositionComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GamePreviousTouchPositionComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameRigidbodyComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameRotationComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameTargetCreatorComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameTouchingComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameTouchPositionComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameTransformComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameTupleButtonComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameVelocityComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\Components\GameVerticalVelocityComponent.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\GameAttribute.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\GameComponentsLookup.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\GameContext.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\GameEntity.cs" />
+    <Compile Include="Assets\_Scripts\Generated\Game\GameMatcher.cs" />
     <Compile Include="Assets\_Scripts\Mis\Mis.cs" />
     <Compile Include="Assets\_Scripts\Mis\Operations.cs" />
-    <Compile Include="Assets\_Scripts\Mis\Test.cs" />
+    <Compile Include="Assets\_Scripts\Mis\Requirements.cs" />
     <Compile Include="Assets\_Scripts\Mis\Todos.cs" />
   </ItemGroup>
   <ItemGroup>

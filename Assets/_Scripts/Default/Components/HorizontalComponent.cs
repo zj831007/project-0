@@ -13,10 +13,9 @@ using Object = UnityEngine.Object;
 
 namespace Project0
 {
-    [Input]
-    public class HorizontalComponent : IComponent
+    [Game]
+    public class HorizontalComponent : SerializableComponent, IComponent
     {
-        public bool value;
         public override string ToString()
         {
             return "";

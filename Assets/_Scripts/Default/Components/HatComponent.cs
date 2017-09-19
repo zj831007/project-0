@@ -13,13 +13,12 @@ using Object = UnityEngine.Object;
 
 namespace Project0
 {
-    [Input]
-    public class HatComponent : IComponent
+    [Game]
+    public class HatComponent : SerializableComponent, IComponent
     {
-        public InputEntity value;
         public override string ToString()
         {
-            return "";
+            return "Hat";
         }
     }
 }

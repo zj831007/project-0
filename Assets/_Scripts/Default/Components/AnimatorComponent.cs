@@ -14,8 +14,12 @@ using Object = UnityEngine.Object;
 namespace Project0
 {
     [Game]
-    public class AnimatorComponent : IComponent
+    public class AnimatorComponent : SerializableComponent, IComponent
     {
         public Animator value;
+        public override string ToString()
+        {
+            return "";
+        }
     }
 }

@@ -10,48 +10,69 @@ using UnityEngine.EventSystems;
 using Entitas;
 using Entitas.CodeGeneration.Attributes;
 using Object = UnityEngine.Object;
+using UnityEngine.Serialization;
 
 namespace Project0
 {
     public class GameConfigAsset : DictionaryAsset
     {
-        public bool isGod = false;
-        public bool leftJoystick = false;
-        public bool rightJoystick = false;
-        public bool leftTupleButton = false;
-        public bool rightPad = false;
-        [Range(0f, 100f)]
-        public float rightPadX = 50f;
-        [Range(0f, 100f)]
-        public float rightPadY = 50f;
-        public LayerMask cameraBlockMask;
-        [Range(0f, 20f)]
-        public float cameraMaxDistance = 5f;
-        [Range(0f, 10f)]
-        public float cameraMinDistance = 2f;
-        [Range(0f, 5f)]
-        public float cameraHeight = 1.5f;
-        [Range(0f, 100f)]
-        public float cameraFlySpeed = 50f;
-        [Range(0f, 100f)]
-        public float cameraWalkSpeed = 50f;
-        [Range(0f, 100f)]
-        public float cameraLiftSpeed = 50f;
-        [Range(0f, 89f)]
-        public float cameraUpDegree = 75f;
-        [Range(-89f, 0f)]
-        public float cameraDownDegree = -75f;
-        public bool cameraAutoLock = true;
-        public bool cameraFastLock = false;
-        [Range(0f, 3f)]
-        public float cameraAutoTime = 0.5f;
-        [Range(-89f, 89f)]
-        public float cameraAutoDegree = 15f;
-        [Range(0f, 100f)]
-        public float cameraAutoSpeed = 50f;
-        public LayerMask playerMask;
-        public LayerMask playerTerrainMask;
-        [Range(0f, 100f)]
-        public float playerRunSpeed = 50f;
+        [Serializable]
+        public class InputConfig
+        {
+            [ConfigPropertyName("inputMode")]
+            public InputMode mode;
+            [Range(0f, 100f)]
+            public float rightPadX = 50f;
+            [Range(0f, 100f)]
+            public float rightPadY = 50f;
+        }
+        [NestedConfigAttribute]
+        public InputConfig input;
+        [Serializable]
+        public class CameraConfig
+        {
+            [ConfigPropertyName("cameraBlockMask")]
+            public LayerMask blockMask;
+            [Range(0f, 20f), ConfigPropertyName("cameraMaxDistance")]
+            public float maxDistance = 5f;
+            [Range(0f, 10f), ConfigPropertyName("cameraMinDistance")]
+            public float minDistance = 2f;
+            [Range(0f, 5f), ConfigPropertyName("cameraMaxDistance")]
+            public float height = 1.5f;
+            [Range(0f, 100f), ConfigPropertyName("cameraHeight")]
+            public float flySpeed = 50f;
+            [Range(0f, 100f), ConfigPropertyName("cameraFlySpeed")]
+            public float walkSpeed = 50f;
+            [Range(0f, 100f), ConfigPropertyName("cameraWalkSpeed")]
+            public float liftSpeed = 50f;
+            [Range(0f, 89f), ConfigPropertyName("cameraLiftSpeed")]
+            public float upDegree = 75f;
+            [Range(-89f, 0f), ConfigPropertyName("cameraUpDegree")]
+            public float downDegree = -75f;
+            [ConfigPropertyName("cameraAutoLock")]
+            public bool autoLock = true;
+            [ConfigPropertyName("cameraFastLock")]
+            public bool fastLock = false;
+            [Range(0f, 3f), ConfigPropertyName("cameraAutoTime")]
+            public float autoTime = 0.5f;
+            [Range(-89f, 89f), ConfigPropertyName("cameraAutoDegree")]
+            public float autoDegree = 15f;
+            [Range(0f, 100f), ConfigPropertyName("cameraAutoSpeed")]
+            public float autoSpeed = 50f;
+        }
+        [NestedConfigAttribute]
+        public CameraConfig camera;
+        [Serializable]
+        public class PawnConfig
+        {
+            [ConfigPropertyName("pawnMask")]
+            public LayerMask mask;
+            [ConfigPropertyName("pawnTerrainMask")]
+            public LayerMask terrainMask;
+            [Range(0f, 100f), ConfigPropertyName("pawnRunSpeed")]
+            public float runSpeed = 50f;
+        }
+        [NestedConfigAttribute]
+        public PawnConfig pawn;
     }
 }

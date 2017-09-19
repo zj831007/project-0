@@ -13,7 +13,7 @@ using Object = UnityEngine.Object;
 
 namespace Project0
 {
-    [Input]
+    [Game]
     public class TouchingComponent : IComponent
     {
         public override string ToString()

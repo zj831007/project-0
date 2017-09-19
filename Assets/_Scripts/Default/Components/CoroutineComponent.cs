@@ -13,7 +13,7 @@ using Object = UnityEngine.Object;
 
 namespace Project0
 {
-    [Game, Input]
+    [Game]
     public class CoroutineComponent : IComponent
     {
         public IEnumerator value;

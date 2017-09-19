@@ -2,12 +2,12 @@
 
 public class CoroutineSystem : IExecuteSystem
 {
-    IGroup<InputEntity> _inputCoroutinesGroup;
+    IGroup<GameEntity> _inputCoroutinesGroup;
     IGroup<GameEntity> _gameCoroutinesGroup;
 
     public CoroutineSystem(Contexts contexts)
     {
-        _inputCoroutinesGroup = contexts.input.GetGroup(InputMatcher.Coroutine);
+        _inputCoroutinesGroup = contexts.game.GetGroup(GameMatcher.Coroutine);
         _gameCoroutinesGroup = contexts.game.GetGroup(GameMatcher.Coroutine);
     }
 

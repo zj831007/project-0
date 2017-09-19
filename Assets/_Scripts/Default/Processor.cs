@@ -31,18 +31,24 @@ namespace Project0
         }
         public Processor ActivateExecuteSystem(string name)
         {
-            int index = _executeSystemInfoIndices[name];
-            var info = executeSystemInfos[index];
-            info.isActive = true;
-            (info.system as IInitializeSystem)?.Initialize();
+            int index;
+            if (_executeSystemInfoIndices.TryGetValue(name, out index))
+            {
+                var info = executeSystemInfos[index];
+                info.isActive = true;
+                (info.system as IInitializeSystem)?.Initialize();
+            }
             return this;
         }
         public Processor DeactivateExecuteSystem(string name)
         {
-            int index = _executeSystemInfoIndices[name];
-            var info = executeSystemInfos[index];
-            info.isActive = false;
-            (info.system as ITearDownSystem)?.TearDown();
+            int index;
+            if (_executeSystemInfoIndices.TryGetValue(name, out index))
+            {
+                var info = executeSystemInfos[index];
+                info.isActive = false;
+                (info.system as ITearDownSystem)?.TearDown();
+            }
             return this;
         }
         public Processor ExecuteInitializeSystem(string name)

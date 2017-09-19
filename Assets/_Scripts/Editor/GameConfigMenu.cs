@@ -20,7 +20,7 @@ namespace Project0.EditorExtensions
             var dirs = Menu.GetDirectories();
             foreach (var dir in dirs)
             {
-                AssetDatabase.CreateAsset(new GameConfigAsset(), GetPath(dir));
+                AssetDatabase.CreateAsset(ScriptableObject.CreateInstance<GameConfigAsset>(), GetPath(dir));
             }
         }
         static string GetPath(string dir, int order = 0)

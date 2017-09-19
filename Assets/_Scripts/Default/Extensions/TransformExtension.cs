@@ -13,11 +13,11 @@ using Object = UnityEngine.Object;
 
 namespace Project0
 {
-    public static class TransformExtension
+    public static class TransformExtension 
     {
-        public static GameEntity getGameEntity(this Transform transform)
+        public static GameEntity GetEntity(this Transform transform)
         {
-            return transform.GetComponent<IGameEntityProvider>()?.gameEntity;
+            return transform.GetComponent<EntityCreator>()?.entity;
         }
     }
 }

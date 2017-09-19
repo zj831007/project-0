@@ -13,8 +13,8 @@ using Object = UnityEngine.Object;
 
 namespace Project0
 {
-    [Game, Unique]
-    public class PlayerComponent : IComponent
+    [Game]
+    public class PlayerComponent : SerializableComponent, IComponent
     {
         public override string ToString()
         {

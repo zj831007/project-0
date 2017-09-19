@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - PlayerTerrain
-  - Player
+  - Pawn
+  - PawnTerrain
   - 
   - 
   - 

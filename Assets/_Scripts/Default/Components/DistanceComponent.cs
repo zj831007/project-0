@@ -13,8 +13,8 @@ using Object = UnityEngine.Object;
 
 namespace Project0
 {
-    [Game, Input]
-    public class DistanceComponent : IComponent
+    [Game]
+    public class DistanceComponent : SerializableComponent, IComponent
     {
         public float value;
         public override string ToString()

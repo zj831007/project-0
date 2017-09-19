@@ -12,6 +12,7 @@ using Entitas.CodeGeneration.Attributes;
 using Object = UnityEngine.Object;
 using UnityEditor;
 using System.Reflection;
+using UnityEditor.SceneManagement;
 
 namespace Project0.EditorExtensions
 {
@@ -19,9 +20,8 @@ namespace Project0.EditorExtensions
     public class GameConfigInspector : Editor
     {
         GameConfig _config;
-        static bool _showInputConfig = true;
-        static bool _showCameraConfig = true;
-        static bool _showFighterConfig = true;
+        GameConfigAsset _asset;
+        SerializedObject _serializedAsset;
 
         public override void OnInspectorGUI()
         {
@@ -31,139 +31,94 @@ namespace Project0.EditorExtensions
             EditorGUILayout.PropertyField(assetProp);
             if (assetProp.objectReferenceValue)
             {
-                var asset = (GameConfigAsset)assetProp.objectReferenceValue;
-                DictionaryAssetExtension.serializedAsset = new SerializedObject(asset);
-                bool isGod;
-                if (asset.BoolPropertyField(nameof(_config.isGod), out isGod))
-                {
-                    if (Application.isPlaying)
-                    {
-                        if (isGod)
-                        {
-                            Controller.processor
-                                .DeactivateExecuteSystem(nameof(ThirdPersonCameraProcessor))
-                                /*.DeactivateExecuteSystem(nameof(ThirdPersonCameraProcessor))*/;
-                            Controller.fixedProcessor
-                                .DeactivateExecuteSystem(nameof(PlayerRunSystem));
-                            Controller.processor
-                                .ActivateExecuteSystem(nameof(CameraFlySystem))
-                                .ActivateExecuteSystem(nameof(CameraWalkSystem))
-                                .ActivateExecuteSystem(nameof(CameraLiftSystem))
-                                .ActivateExecuteSystem(nameof(CameraFreeRotationSystem));
-                        }
-                        else
-                        {
-                            Controller.processor
-                                .DeactivateExecuteSystem(nameof(CameraFlySystem))
-                                .DeactivateExecuteSystem(nameof(CameraWalkSystem))
-                                .DeactivateExecuteSystem(nameof(CameraLiftSystem))
-                                .DeactivateExecuteSystem(nameof(CameraFreeRotationSystem));
-                            Controller.processor
-                                //.ActivateExecuteSystem(nameof(PlayerRunSystem))
-                                .ActivateExecuteSystem(nameof(ThirdPersonCameraProcessor));
-                            Controller.fixedProcessor
-                                .ActivateExecuteSystem(nameof(PlayerRunSystem));
-                        }
-                    }
-                }
-                if (_showInputConfig = EditorGUILayout.Foldout(_showInputConfig, "Input"))
-                {
-                    EditorGUI.indentLevel++;
-                    if (asset.BoolPropertyField(nameof(_config.leftJoystick)))
-                    {
-                        ActivateInitInputSystem();
-                    }
-                    if (asset.BoolPropertyField(nameof(_config.rightJoystick)))
-                    {
-                        ActivateInitInputSystem();
-                    }
-                    if (asset.BoolPropertyField(nameof(_config.leftTupleButton)))
-                    {
-                        ActivateInitInputSystem();
-                    }
-                    bool rightPad;
-                    if (asset.BoolPropertyField(nameof(_config.rightPad), out rightPad))
-                    {
-                        ActivateInitInputSystem();
-                    }
-                    if (rightPad)
-                    {
-                        EditorGUI.indentLevel++;
-                        asset.FloatPropertyField(nameof(_config.rightPadX));
-                        asset.FloatPropertyField(nameof(_config.rightPadY));
-                        EditorGUI.indentLevel--;
-                    }
-                    EditorGUI.indentLevel--;
-                }
-                if (_showCameraConfig = EditorGUILayout.Foldout(_showCameraConfig, "Camera"))
-                {
-                    EditorGUI.indentLevel++;
-                    asset.ObjectPropertyField(nameof(_config.cameraBlockMask), "Block Mask");
-                    asset.FloatPropertyField(nameof(_config.cameraMaxDistance), "Max Distance");
-                    asset.FloatPropertyField(nameof(_config.cameraMinDistance), "Min Distance");
-                    asset.FloatPropertyField(nameof(_config.cameraHeight), "Height");
-                    asset.FloatPropertyField(nameof(_config.cameraFlySpeed), "Fly Speed");
-                    asset.FloatPropertyField(nameof(_config.cameraWalkSpeed), "Walk Speed");
-                    asset.FloatPropertyField(nameof(_config.cameraLiftSpeed), "Lift Speed");
-                    asset.FloatPropertyField(nameof(_config.cameraUpDegree), "Up Degree");
-                    asset.FloatPropertyField(nameof(_config.cameraDownDegree), "Down Degree");
-                    bool autolock;
-                    if (asset.BoolPropertyField(nameof(_config.cameraAutoLock), out autolock, "Auto Lock"))
-                    {
-                        if (Application.isPlaying)
-                        {
-                            var processor = Controller.processor[nameof(ThirdPersonCameraProcessor)];
-                            if (autolock)
-                            {
-                                processor
-                                    .ActivateExecuteSystem(nameof(CameraAutoCheckSystem))
-                                    .ActivateExecuteSystem(nameof(CameraAutoLockSystem));
-                            }
-                            else
-                            {
-                                processor
-                                    .DeactivateExecuteSystem(nameof(CameraAutoCheckSystem))
-                                    .DeactivateExecuteSystem(nameof(CameraAutoLockSystem));
-                            }
-                        }
-                    }
-                    if (autolock)
-                    {
-                        EditorGUI.indentLevel++;
-                        bool fast;
-                        asset.BoolPropertyField(nameof(_config.cameraFastLock), out fast, "Fast");
-                        if (fast == false)
-                        {
-                            EditorGUI.indentLevel++;
-                            asset.FloatPropertyField(nameof(_config.cameraAutoTime), "Time");
-                            EditorGUI.indentLevel--;
-                        }
-                        asset.FloatPropertyField(nameof(_config.cameraAutoDegree), "Degree");
-                        asset.FloatPropertyField(nameof(_config.cameraAutoSpeed), "Speed");
-                        EditorGUI.indentLevel--;
-                    }
-                    EditorGUI.indentLevel--;
-                }
-                if (_showInputConfig = EditorGUILayout.Foldout(_showInputConfig, "Player"))
-                {
-                    EditorGUI.indentLevel++;
-                    asset.ObjectPropertyField(nameof(_config.playerMask), "Mask");
-                    asset.ObjectPropertyField(nameof(_config.playerTerrainMask), "Terrain Mask");
-                    asset.FloatPropertyField(nameof(_config.playerRunSpeed), "Run Speed");
-                    EditorGUI.indentLevel--;
-                }
-                EditorUtility.SetDirty(asset);
+                _asset = (GameConfigAsset)assetProp.objectReferenceValue;
+                _serializedAsset = new SerializedObject(_asset);
+                DrawProperties(_asset.GetType());
+                EditorUtility.SetDirty(_asset);
             }
             serializedConfig.ApplyModifiedProperties();
-        }
-        public void ActivateInitInputSystem()
-        {
-            if (Application.isPlaying)
+            if (GUI.changed)
             {
-                Controller.processor
-                            .ExecuteInitializeSystem(nameof(InitInputSystem));
+                EditorUtility.SetDirty(_config);
+                if (Application.isPlaying == false)
+                {
+                    EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
+                }
             }
         }
-
+        public void DrawProperties(Type type, string parentPath = "")
+        {
+            foreach (var field in type.GetFields())
+            {
+                if (field.GetCustomAttribute<NestedConfigAttribute>() == null)
+                {
+                    EditorGUI.BeginChangeCheck();
+                    var prop = _serializedAsset.FindProperty(parentPath + field.Name);
+                    EditorGUILayout.PropertyField(prop);
+                    if (EditorGUI.EndChangeCheck() == false) continue;
+                    var name = field.GetCustomAttribute<ConfigPropertyNameAttribute>()?.name ?? field.Name;
+                    switch (prop.propertyType)
+                    {
+                        case SerializedPropertyType.Generic:
+                            break;
+                        case SerializedPropertyType.Integer:
+                            break;
+                        case SerializedPropertyType.Boolean:
+                            _config[name] = prop.boolValue;
+                            break;
+                        case SerializedPropertyType.Float:
+                            _config[name] = prop.floatValue;
+                            break;
+                        case SerializedPropertyType.String:
+                            break;
+                        case SerializedPropertyType.Color:
+                            break;
+                        case SerializedPropertyType.ObjectReference:
+                            break;
+                        case SerializedPropertyType.LayerMask:
+                            break;
+                        case SerializedPropertyType.Enum:
+                            _config[name] = prop.enumValueIndex;
+                            break;
+                        case SerializedPropertyType.Vector2:
+                            break;
+                        case SerializedPropertyType.Vector3:
+                            break;
+                        case SerializedPropertyType.Vector4:
+                            break;
+                        case SerializedPropertyType.Rect:
+                            break;
+                        case SerializedPropertyType.ArraySize:
+                            break;
+                        case SerializedPropertyType.Character:
+                            break;
+                        case SerializedPropertyType.AnimationCurve:
+                            break;
+                        case SerializedPropertyType.Bounds:
+                            break;
+                        case SerializedPropertyType.Gradient:
+                            break;
+                        case SerializedPropertyType.Quaternion:
+                            break;
+                        case SerializedPropertyType.ExposedReference:
+                            break;
+                        case SerializedPropertyType.FixedBufferSize:
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    var prop = _serializedAsset.FindProperty(field.Name);
+                    if (prop.isExpanded = EditorGUILayout.Foldout(prop.isExpanded, field.Name))
+                    {
+                        EditorGUI.indentLevel++;
+                        DrawProperties(field.GetValue(_asset).GetType(), prop.propertyPath + ".");
+                        EditorGUI.indentLevel--;
+                    }
+                }
+            }
+        }
     }
 }

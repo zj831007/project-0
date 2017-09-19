@@ -13,8 +13,8 @@ using Object = UnityEngine.Object;
 
 namespace Project0
 {
-    [Input]
-    public class CenterComponent : IComponent
+    [Game]
+    public class CenterComponent : SerializableComponent, IComponent
     {
         public Vector3 value;
         public override string ToString()

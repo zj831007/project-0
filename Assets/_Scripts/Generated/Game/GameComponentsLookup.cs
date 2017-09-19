@@ -10,58 +10,130 @@ public static class GameComponentsLookup {
 
     public const int AngleOffset = 0;
     public const int Animator = 1;
-    public const int CameraTransform = 2;
-    public const int Coroutine = 3;
-    public const int Destroyed = 4;
-    public const int Direction = 5;
-    public const int Distance = 6;
-    public const int Fighter = 7;
-    public const int ID = 8;
-    public const int Name = 9;
-    public const int Normal = 10;
-    public const int PivotTransform = 11;
-    public const int Player = 12;
-    public const int Position = 13;
-    public const int Rigidbody = 14;
-    public const int Transform = 15;
+    public const int Camera = 2;
+    public const int CameraCreator = 3;
+    public const int Center = 4;
+    public const int Coroutine = 5;
+    public const int Destroyed = 6;
+    public const int Direction = 7;
+    public const int Distance = 8;
+    public const int Hat = 9;
+    public const int HatCreator = 10;
+    public const int Horizontal = 11;
+    public const int HorizontalVelocity = 12;
+    public const int ID = 13;
+    public const int Inactive = 14;
+    public const int InputType = 15;
+    public const int Joystick = 16;
+    public const int LerpLocalPosition = 17;
+    public const int LerpPostion = 18;
+    public const int LerpRotation = 19;
+    public const int LocalPosition = 20;
+    public const int Name = 21;
+    public const int Normal = 22;
+    public const int Pad = 23;
+    public const int Pawn = 24;
+    public const int PawnCreator = 25;
+    public const int Pivot = 26;
+    public const int PivotCreator = 27;
+    public const int Player = 28;
+    public const int Position = 29;
+    public const int PreviousTouchPosition = 30;
+    public const int Rigidbody = 31;
+    public const int Rotation = 32;
+    public const int TargetCreator = 33;
+    public const int Touching = 34;
+    public const int TouchPosition = 35;
+    public const int Transform = 36;
+    public const int TupleButton = 37;
+    public const int Velocity = 38;
+    public const int VerticalVelocity = 39;
 
-    public const int TotalComponents = 16;
+    public const int TotalComponents = 40;
 
     public static readonly string[] componentNames = {
         "AngleOffset",
         "Animator",
-        "CameraTransform",
+        "Camera",
+        "CameraCreator",
+        "Center",
         "Coroutine",
         "Destroyed",
         "Direction",
         "Distance",
-        "Fighter",
+        "Hat",
+        "HatCreator",
+        "Horizontal",
+        "HorizontalVelocity",
         "ID",
+        "Inactive",
+        "InputType",
+        "Joystick",
+        "LerpLocalPosition",
+        "LerpPostion",
+        "LerpRotation",
+        "LocalPosition",
         "Name",
         "Normal",
-        "PivotTransform",
+        "Pad",
+        "Pawn",
+        "PawnCreator",
+        "Pivot",
+        "PivotCreator",
         "Player",
         "Position",
+        "PreviousTouchPosition",
         "Rigidbody",
-        "Transform"
+        "Rotation",
+        "TargetCreator",
+        "Touching",
+        "TouchPosition",
+        "Transform",
+        "TupleButton",
+        "Velocity",
+        "VerticalVelocity"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Project0.AngleOffset),
+        typeof(Project0.AngleOffsetComponent),
         typeof(Project0.AnimatorComponent),
-        typeof(Project0.CameraTransformComponent),
+        typeof(Project0.CameraComponent),
+        typeof(Project0.CameraCreatorComponent),
+        typeof(Project0.CenterComponent),
         typeof(Project0.CoroutineComponent),
         typeof(Project0.DestroyedComponent),
         typeof(Project0.DirectionComponent),
         typeof(Project0.DistanceComponent),
-        typeof(Project0.FighterComponent),
+        typeof(Project0.HatComponent),
+        typeof(Project0.HatCreatorComponent),
+        typeof(Project0.HorizontalComponent),
+        typeof(Project0.HorizontalVelocityComponent),
         typeof(Project0.IDComponent),
+        typeof(Project0.InactiveComponent),
+        typeof(Project0.InputTypeComponent),
+        typeof(Project0.JoystickComponent),
+        typeof(Project0.LerpLocalPositionComponent),
+        typeof(Project0.LerpPostionComponent),
+        typeof(Project0.LerpRotationComponent),
+        typeof(Project0.LocalPosition),
         typeof(Project0.NameComponent),
         typeof(Project0.NormalComponent),
-        typeof(Project0.PivotTransformComponent),
+        typeof(Project0.PadComponent),
+        typeof(Project0.PawnComponent),
+        typeof(Project0.PawnCreatorComponent),
+        typeof(Project0.PivotComponent),
+        typeof(Project0.PivotCreatorComponent),
         typeof(Project0.PlayerComponent),
-        typeof(Project0.Position),
+        typeof(Project0.PositionComponent),
+        typeof(Project0.PreviousTouchPositionComponent),
         typeof(Project0.RigidbodyComponent),
-        typeof(Project0.TransformComponent)
+        typeof(Project0.RotationComponent),
+        typeof(Project0.TargetCreatorComponent),
+        typeof(Project0.TouchingComponent),
+        typeof(Project0.TouchPositionComponent),
+        typeof(Project0.TransformComponent),
+        typeof(Project0.TupleButtonComponent),
+        typeof(Project0.VelocityComponent),
+        typeof(Project0.VerticalVelocityComponent)
     };
 }
